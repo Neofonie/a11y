@@ -5,13 +5,11 @@ import { hideBin } from 'yargs/helpers';
 
 const secrets = yargs(hideBin(process.argv)).argv;
 const sftp = new Client();
-const src = './public';
+const src = './build';
 
 let privateKey = '';
 privateKey = secrets.privateKey.replace(/\|/g, '\n')
 privateKey = Buffer.from(privateKey, 'utf-8');
-
-console.log( secrets.host, secrets.port, secrets.username,  secrets.destination)
 
 if (true) {
     sftp

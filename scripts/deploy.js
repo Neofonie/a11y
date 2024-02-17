@@ -8,11 +8,10 @@ const sftp = new Client();
 const src = './public';
 
 let privateKey = '';
-privateKey =
-    '-----BEGIN OPENSSH PRIVATE KEY-----' +
-    secrets.privateKey.replace(/\|/g, '\n') +
-    '\n-----END OPENSSH PRIVATE KEY-----\n';
+privateKey = secrets.privateKey.replace(/\|/g, '\n')
 privateKey = Buffer.from(privateKey, 'utf-8');
+
+console.log( secrets.host, secrets.port, secrets.username,  secrets.destination)
 
 if (true) {
     sftp

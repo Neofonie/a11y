@@ -1,0 +1,26 @@
+name: Build and Deploy
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '20'
+
+      - name: Run npm ci and build
+        run: |
+          npm ci
+          npm run build
+
+      - name: Run npm deploy
+        run: |
+          node ./scripts/deploy.js ${{ secrets.DEPLOY }} --privateKey="${{ secrets.PRIVATE_KEY }}"

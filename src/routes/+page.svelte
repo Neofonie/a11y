@@ -1,4 +1,4 @@
-<h1>Accessibility „A11y“ (11 stehen für 11 Buchstaben ergo eine abkürzung)</h1>
+<h1>Test Accessibility „A11y“ (11 stehen für 11 Buchstaben ergo eine abkürzung)</h1>
 
 <p>Diese Checkliste wird von unseren Entwicklern genutzt um eine gewisse Barriere-Freiheit für unsere Endkunden zu gewährleisten.
 Jede Komponente/Seite sollte gegen diese Checkliste geprüft werden.</p>

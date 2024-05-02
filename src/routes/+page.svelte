@@ -32,6 +32,7 @@
 
 <StoredCheckbox key="auto-tests">
   Alle automatischen Accessibility-Tests laufen durch
+  <div slot="named">huhu</div>
 </StoredCheckbox>
 
 <StoredCheckbox key="axe-chrome-extension" label="Axe Chrome Extension" />
@@ -52,7 +53,6 @@
       <script type="module" src="./index.js">&lt;/script>
     </body>
   </script>
-        
   <script type="sample/ts" filename="index.ts">
     document.body.appendChild(document.createTextNode("World!"))
   </script>

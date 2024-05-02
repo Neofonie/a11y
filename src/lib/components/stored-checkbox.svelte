@@ -11,7 +11,7 @@
   <StoredInput {key} let:value let:handleChange>
     <Checkbox {value} on:change={handleChange} {label}>
       <slot></slot>
-      <slot name="named" />
+      <div slot="named"><slot name="named" /></div>
     </Checkbox>
     
   </StoredInput>

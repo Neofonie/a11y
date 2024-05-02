@@ -16,6 +16,7 @@ Jede Komponente/Seite sollte gegen diese Checkliste geprüft werden.</p>
 <Link href="https://www.w3schools.com/accessibility/index.php">W3School Accessibility Tutorial</Link>
 <Link href="https://developer.mozilla.org/en-US/docs/Learn/Accessibility">MDN Dev Docs: Accessibility</Link>
 <Link href="https://www.w3.org/TR/WCAG20/">Web Content Accessibility Guidelines (WCAG)</Link>
+<Link href="https://www.barrierefreiheit-dienstekonsolidierung.bund.de/Webs/PB/DE/barrierefreie_it/digitale-barrierefreiheit/digitale-barrierefreiheit-node.html">Digitale Barrierefreiheit (Bundesministerium des Innern und für Heimat)</Link>
 
 <h2>Allgemein</h2>
 

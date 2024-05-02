@@ -1,5 +1,6 @@
 <script type="ts">
-    import Checkbox from '$lib/components/checkbox.svelte';
+    import Checkbox from '$lib/components/checkbox.svelte';;
+    import Github from '$lib/components/github.svelte';
 </script>
 
 <svelte:head>
@@ -8,6 +9,8 @@
         src="/node_modules/playground-elements/playground-ide.js"
     ></script>
 </svelte:head>
+
+<Github/>
 
 <h1>Test Accessibility „A11y“ (11 stehen für 11 Buchstaben ergo eine abkürzung)</h1>
 

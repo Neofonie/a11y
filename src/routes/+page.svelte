@@ -1,11 +1,17 @@
+<script type="ts">
+    import Checkbox from '$lib/components/checkbox.svelte'
+</script>
+
 <h1>Test Accessibility „A11y“ (11 stehen für 11 Buchstaben ergo eine abkürzung)</h1>
 
 <p>Diese Checkliste wird von unseren Entwicklern genutzt um eine gewisse Barriere-Freiheit für unsere Endkunden zu gewährleisten.
 Jede Komponente/Seite sollte gegen diese Checkliste geprüft werden.</p>
 
 <h2>Allgemein</h2>
-
-<label><input type="checkbox">Alle automatischen Accessibility-Tests laufen durch</label> <br />
+<Checkbox test="123">
+    Alle automatischen Accessibility-Tests laufen durch
+    <div slot="named">huhu</div>
+</Checkbox> <br />
 <label><input type="checkbox">Axe Chrome extension</label> <br />
 <label><input type="checkbox">Wave Chrome Erweiterung</label> <br />
 <label><input type="checkbox">Lighthouse (Accessibility)</label> <br />

@@ -19,4 +19,6 @@
 <input type="checkbox" bind:checked id="checkbox" on:click={handleChange} />
 {#if label}
   <label for="checkbox">{label}</label>
+{:else}
+  <slot />
 {/if}

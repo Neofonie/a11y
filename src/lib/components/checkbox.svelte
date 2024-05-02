@@ -9,26 +9,21 @@
 
   function handleChange() {
     value = !value;
-    console.log("checked", value);
-    // notify parent component
     dispatch("change", { checked: value });
   }
 </script>
 
-<input
-  type="checkbox"
-  bind:checked={value}
-  id="checkbox"
-  on:click={handleChange}
-/>
-{#if label}
-  <label for="checkbox">{label}</label>
-{:else}
-  <slot />
-{/if}
+<div class="checkbox">
+  <input type="checkbox" bind:checked={value} on:click={handleChange} />
+  {#if label}
+    <label for="checkbox">{label}</label>
+  {:else}
+    <slot />
+  {/if}
 
-<div class="checkbox slot">
-  <slot name="named" />
+  <div class="checkbox slot">
+    <slot name="named" />
+  </div>
 </div>
 
 <style>
@@ -36,5 +31,5 @@
     &.slot {
       background: red;
     }
-  }
+    }
 </style>

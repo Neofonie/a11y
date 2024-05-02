@@ -17,7 +17,8 @@
 
 <h2>Allgemein</h2>
 
-<StoredCheckbox key="auto-tests" label="Alle automatischen Accessibility-Tests laufen durch">
+<StoredCheckbox key="auto-tests"
+  >Alle automatischen Accessibility-Tests laufen durch
   <div slot="named">huhu</div>
 </StoredCheckbox>
 

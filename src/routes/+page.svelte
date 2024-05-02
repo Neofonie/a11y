@@ -1,16 +1,47 @@
-<script>
+<script lang="ts">
   import Checkbox from "$lib/checkbox.svelte";
 
-</script>
-<h1>Test Accessibility „A11y“ (11 stehen für 11 Buchstaben ergo eine abkürzung)</h1>
+  function save(key: string, value: boolean) {
+    console.log("saving key", key, value);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem(key, value ? "true" : "false");
+    }
+  }
 
-<p>Diese Checkliste wird von unseren Entwicklern genutzt um eine gewisse Barriere-Freiheit für unsere Endkunden zu gewährleisten.
-Jede Komponente/Seite sollte gegen diese Checkliste geprüft werden.</p>
+  function load(key: string) {
+    console.log("loading key", key);
+    if (typeof window !== 'undefined') {
+      console.log("load", key, localStorage.getItem(key));
+      return localStorage.getItem(key) === "true";
+    }
+    return false;
+  }
+
+  function handleChange(key: string) {
+    return (event: CustomEvent) => {
+      console.log("handleChange", key, event.detail.checked);
+      save(key, event.detail.checked);
+    };
+  }
+</script>
+
+<h1>
+  Test Accessibility „A11y“ (11 stehen für 11 Buchstaben ergo eine abkürzung)
+</h1>
+
+<p>
+  Diese Checkliste wird von unseren Entwicklern genutzt um eine gewisse
+  Barriere-Freiheit für unsere Endkunden zu gewährleisten. Jede Komponente/Seite
+  sollte gegen diese Checkliste geprüft werden.
+</p>
 
 <h2>Allgemein</h2>
 
-<Checkbox key="auto-tests">Alle automatischen Accessibility-Tests laufen durch</Checkbox>
-<Checkbox key="axe-chrome-ext">Axe Chrome extension</Checkbox>
+<Checkbox
+  checked={load("auto-tests")}
+  on:change={handleChange('auto-tests')}
+>Alle automatischen Accessibility-Tests laufen durch</Checkbox>
+<Checkbox>Axe Chrome extension</Checkbox>
 <Checkbox>Wave Chrome Erweiterung</Checkbox>
 <Checkbox>Lighthouse (Accessibility)</Checkbox>
 

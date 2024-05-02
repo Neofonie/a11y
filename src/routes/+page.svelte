@@ -1,6 +1,7 @@
 <script lang="ts">
   import StoredCheckbox from "$lib/components/stored-checkbox.svelte";
   import Github from "$lib/components/github.svelte";
+    import BuildDate from '$lib/components/buildDate.svelte';
 </script>
 
 <svelte:head>
@@ -82,5 +83,5 @@
   <StoredCheckbox key="buttons-space-enter" label="Buttons können über Leertaste und Eingabetaste betätigt werden" />
   <StoredCheckbox key="menus-overlays-esc" label="Menüs und Overlays können via ESC-Taste wieder geschlossen werden" />
 
-  <p><strong>Stand 02.2024</strong></p>
+<BuildDate />
 </div>

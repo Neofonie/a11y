@@ -32,6 +32,7 @@ Jede Komponente/Seite sollte gegen diese Checkliste geprüft werden.</p>
 <StoredCheckbox key="tabindex" label="Es gibt bei tabindex nur 0 oder -1" />
 <StoredCheckbox key="a-tag" label="`&lt;a />-Tag` wird für alle Links verwendet -> Seitenwechsel" />
 <StoredCheckbox key="button-tag" label="`&lt;button />-Tag` wird für alle Buttons, Klick- und Action-Flächen genutzt (kein div mit onclick etc.)" />
+<StoredCheckbox key="ul-ol-tags" label="Wenn ein `&lt;ol>`- oder `&lt;ul>-Element` vorhanden ist, sollte es mindestens ein `&lt;li>-Element` enthalten. Wenn ein `&lt;dl>-Element` vorhanden ist, sollte es mindestens ein `&lt;dt>-Element` enthalten." />
 
 <h2>Content</h2>
 
@@ -43,6 +44,10 @@ Jede Komponente/Seite sollte gegen diese Checkliste geprüft werden.</p>
 <StoredCheckbox key="img-alt" label="Alle `&lt;img />-Elemente` haben ein alt-Attribut" />
 <StoredCheckbox key="svg-aria-hidden" label="rein dekorative SVGs haben `aria-hidden=&quot;true&quot;`" />
 <StoredCheckbox key="img-svg-role" label="`&lt;img />-Elemente` mit source SVG haben das role-Attribut `role=&quot;img&quot;`" />
+
+<h2>Video & Audio</h2>
+
+<StoredCheckbox key="videos-audios-playable" label="Die automatische Wiedergabefunktion für Video (sowie für Audio oder andere Multimedia) ist entfernt. Benutzer können die Wiedergabe  starten, anhalten und stoppen." />
 
 <h2>Formulare</h2>
 

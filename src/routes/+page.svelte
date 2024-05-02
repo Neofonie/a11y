@@ -1,6 +1,6 @@
 <script lang="ts">
-    import StoredCheckbox from "$lib/components/stored-checkbox.svelte";
-    import Github from "$lib/components/github.svelte";
+    import StoredCheckbox from '$lib/components/stored-checkbox.svelte';
+    import Github from '$lib/components/github.svelte';
     import BuildDate from '$lib/components/buildDate.svelte';
 </script>
 

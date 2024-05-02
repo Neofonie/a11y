@@ -20,7 +20,6 @@
   {:else}
     <slot />
   {/if}
-
   <div class="checkbox slot">
     <slot name="named" />
   </div>
@@ -31,5 +30,5 @@
     &.slot {
       background: red;
     }
-    }
+  }
 </style>

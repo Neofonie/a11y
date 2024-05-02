@@ -16,6 +16,14 @@ Jede Komponente/Seite sollte gegen diese Checkliste geprüft werden.</p>
   <li><a href="https://www.w3schools.com/accessibility/index.php">W3School Accessibility Tutorial</a></li>
 </ul>
 
+<ul>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Learn/Accessibility">MDN Dev Docs: Accessibility</a></li>
+</ul>
+
+<ul>
+  <li><a href="https://www.w3.org/TR/WCAG20/">Web Content Accessibility Guidelines (WCAG)</a></li>
+</ul>
+
 <h2>Allgemein</h2>
 
 <StoredCheckbox key="auto-tests" label="Alle automatischen Accessibility-Tests laufen durch" />

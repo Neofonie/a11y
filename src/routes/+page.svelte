@@ -1,7 +1,14 @@
 <script type="ts">
-    import Checkbox from '$lib/components/checkbox.svelte';
+    import Checkbox from '$lib/components/checkbox.svelte';;
     import Github from '$lib/components/github.svelte';
 </script>
+
+<svelte:head>
+    <script
+        type="module"
+        src="/node_modules/playground-elements/playground-ide.js"
+    ></script>
+</svelte:head>
 
 <Github/>
 
@@ -10,18 +17,24 @@
 <p>Diese Checkliste wird von unseren Entwicklern genutzt um eine gewisse Barriere-Freiheit für unsere Endkunden zu gewährleisten.
 Jede Komponente/Seite sollte gegen diese Checkliste geprüft werden.</p>
 
-<h2>Allgemein</h2>
-<Checkbox test="123">
-    Alle automatischen Accessibility-Tests laufen durch
-    <div slot="named">huhu</div>
-</Checkbox> <br />
-<label><input type="checkbox">Axe Chrome extension</label> <br />
-<label><input type="checkbox">Wave Chrome Erweiterung</label> <br />
-<label><input type="checkbox">Lighthouse (Accessibility)</label> <br />
-
 <h2>Markup</h2>
 
 <label><input type="checkbox">`&lt;html />` hat korrektes lang-attribut</label> <br />
+
+<playground-ide editable-file-system line-numbers resizable>
+  <script type="sample/html" filename="index.html">
+    <!doctype html>
+    <body>
+      Hello
+      <script type="module" src="./index.js">&lt;/script>
+    </body>
+  </script>
+
+  <script type="sample/ts" filename="index.ts">
+    document.body.appendChild(document.createTextNode("World!"))
+  </script>
+</playground-ide>
+
 <label><input type="checkbox">Es gibt bei tabindex nur 0 oder -1</label> <br />
 <label><input type="checkbox">`&lt;a />-Tag` wird für alle Links verwendet -> Seitenwechseln</label> <br />
 <label><input type="checkbox">`&lt;button />-Tag` wird für alle Buttons/Klick/Actionflächen genutzt (kein div mit onclick etc.)</label> <br />

@@ -22,49 +22,47 @@
 
 <StoredCheckbox key="auto-tests" label="Alle automatischen Accessibility-Tests laufen durch" />
 
-<Checkbox>Axe Chrome extension</Checkbox>
-<Checkbox>Wave Chrome Erweiterung</Checkbox>
-<Checkbox>Lighthouse (Accessibility)</Checkbox>
-
+<StoredCheckbox key="axe-chrome-extension" label="Axe Chrome extension" />
+<StoredCheckbox key="wave-chrome-extension" label="Wave Chrome Erweiterung" />
+<StoredCheckbox key="lighthouse" label="Lighthouse (Accessibility)" />
 
 <h2>Markup</h2>
 
-<Checkbox>`&lt;html />` hat korrektes lang-attribut</Checkbox>
-<Checkbox>Es gibt bei tabindex nur 0 oder -1</Checkbox>
-<Checkbox>`&lt;a />-Tag` wird für alle Links verwendet -> Seitenwechseln</Checkbox>
-<Checkbox>`&lt;button />-Tag` wird für alle Buttons/Klick/Actionflächen genutzt (kein div mit onclick etc.)</Checkbox>
+<StoredCheckbox key="html-lang" label="`&lt;html />` hat korrektes lang-attribut" />
+<StoredCheckbox key="tabindex" label="Es gibt bei tabindex nur 0 oder -1" />
+<StoredCheckbox key="a-tag" label="`&lt;a />-Tag` wird für alle Links verwendet -> Seitenwechseln" />
+<StoredCheckbox key="button-tag" label="`&lt;button />-Tag` wird für alle Buttons/Klick/Actionflächen genutzt (kein div mit onclick etc.)" />
 
 <h2>Content</h2>
 
-<Checkbox>`&lt;button />`, `&lt;a />` und `&lt;label />` sind eindeutig und selbsterklärend</Checkbox>
-<Checkbox>Es gibt nur eine `&lt;h1 />` pro Seite</Checkbox>
+<StoredCheckbox key="button-a-label" label="`&lt;button />`, `&lt;a />` und `&lt;label />` sind eindeutig und selbsterklärend" />
+<StoredCheckbox key="h1-per-page" label="Es gibt nur eine `&lt;h1 />` pro Seite" />
 
 <h2>Bilder</h2>
 
-<Checkbox>Alle `&lt;img />-Elemente` haben ein Alt-Attribut</Checkbox>
-<Checkbox>rein dekorative SVGs haben `aria-hidden="true"`</Checkbox>
-<Checkbox>`&lt;img />-Elemente` mit source SVG haben das role Attribut `role="img"`</Checkbox>
+<StoredCheckbox key="img-alt" label="Alle `&lt;img />-Elemente` haben ein Alt-Attribut" />
+<StoredCheckbox key="svg-aria-hidden" label="rein dekorative SVGs haben `aria-hidden='true'`" />
+<StoredCheckbox key="img-svg-role" label="`&lt;img />-Elemente` mit source SVG haben das role Attribut `role='img'`" />
 
 <h2>Formulare</h2>
 
-<Checkbox>Alle Inputs sind mit entsprechenden Label verbunden</Checkbox>
-<Checkbox>Form Input unterstützen grundsätzlich autocomplete</Checkbox>
-<Checkbox>Input Errors werden direkt mit den entsprechenden Feldern assoziiert</Checkbox>
+<StoredCheckbox key="inputs-labels" label="Alle Inputs sind mit entsprechenden Label verbunden" />
+<StoredCheckbox key="form-input-autocomplete" label="Form Input unterstützen grundsätzlich autocomplete" />
+<StoredCheckbox key="input-errors" label="Input Errors werden direkt mit den entsprechenden Feldern assoziiert" />
 
 <h2>Mobile</h2>
 
-<Checkbox>Die Seite kann nicht horizontal gescrollt werden</Checkbox>
-<Checkbox>Viewport Zoom ist deaktiviert</Checkbox>
-<Checkbox>Alle Klickflächen mind. `44x44px`, außer bei Inline-Elementen wie Links</Checkbox>
+<StoredCheckbox key="no-horizontal-scroll" label="Die Seite kann nicht horizontal gescrollt werden" />
+<StoredCheckbox key="viewport-zoom" label="Viewport Zoom ist deaktiviert" />
+<StoredCheckbox key="click-areas-size" label="Alle Klickflächen mind. `44x44px`, außer bei Inline-Elementen wie Links" />
 
 <h2>Tastatur</h2>
 
-<Checkbox>Tastatursteuerung muss komplett möglich sein</Checkbox>
-<Checkbox>Alle interaktiven Elemente müssen einen sichtbaren focustyle haben</Checkbox>
-<Checkbox>Keyboard-Focus Reihenfolge gleicht der des visuellen Layouts</Checkbox>
-<Checkbox>Es gibt keine unsichtbaren fokusierbaren Elemente</Checkbox>
-<Checkbox>Buttons können über Leertaste und Eingabetaste betätigt werden</Checkbox>
-<Checkbox>Menüs und Overlays können via ESC-Taste wieder geschlossen werden</Checkbox>
-
+<StoredCheckbox key="keyboard-control" label="Tastatursteuerung muss komplett möglich sein" />
+<StoredCheckbox key="interactive-elements-focus" label="Alle interaktiven Elemente müssen einen sichtbaren focustyle haben" />
+<StoredCheckbox key="keyboard-focus-order" label="Keyboard-Focus Reihenfolge gleicht der des visuellen Layouts" />
+<StoredCheckbox key="no-invisible-focusable" label="Es gibt keine unsichtbaren fokusierbaren Elemente" />
+<StoredCheckbox key="buttons-space-enter" label="Buttons können über Leertaste und Eingabetaste betätigt werden" />
+<StoredCheckbox key="menus-overlays-esc" label="Menüs und Overlays können via ESC-Taste wieder geschlossen werden" />
 
 <p><strong>Stand 02.2024</strong></p>

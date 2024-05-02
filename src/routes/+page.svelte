@@ -1,60 +1,59 @@
-<script type="ts">
-    import Checkbox from '$lib/components/checkbox.svelte';
-    import Github from '$lib/components/github.svelte';
+<script lang="ts">
+  import StoredCheckbox from "$lib/components/stored-checkbox.svelte";
+  import Github from "$lib/components/github.svelte";
 </script>
 
-<h1>Test Accessibility „A11y“ (11 stehen für 11 Buchstaben, ergo eine Abkürzung)</h1>
-
 <Github/>
+
+<h1>Test Accessibility „A11y“ (11 stehen für 11 Buchstaben, ergo eine Abkürzung)</h1>
 
 <p>Diese Checkliste wird von unseren Entwicklern genutzt, um eine gewisse Barriere-Freiheit für unsere Endkunden zu gewährleisten.
 Jede Komponente/Seite sollte gegen diese Checkliste geprüft werden.</p>
 
 <h2>Allgemein</h2>
 
-<Checkbox>Alle automatischen Accessibility-Tests laufen durch</Checkbox> <br />
-<Checkbox>Axe Chrome Extension</Checkbox> <br />
-<Checkbox>Wave Chrome Extension</Checkbox> <br />
-<Checkbox>Lighthouse (Accessibility)</Checkbox> <br />
+<StoredCheckbox key="auto-tests" label="Alle automatischen Accessibility-Tests laufen durch" />
+<StoredCheckbox key="axe-chrome-extension" label="Axe Chrome Extension" />
+<StoredCheckbox key="wave-chrome-extension" label="Wave Chrome Extension" />
+<StoredCheckbox key="lighthouse" label="Lighthouse (Accessibility)" />
 
 <h2>Markup</h2>
 
-<Checkbox>`&lt;html />` hat korrektes lang-Attribut</Checkbox> <br />
-<Checkbox>Es gibt bei tabindex nur 0 oder -1</Checkbox> <br />
-<Checkbox>`&lt;a />-Tag` wird für alle Links verwendet -> Seitenwechsel</Checkbox> <br />
-<Checkbox>`&lt;button />-Tag` wird für alle Buttons, Klick- und Action-Flächen genutzt (kein div mit onclick etc.)</Checkbox> <br />
+<StoredCheckbox key="html-lang" label="`&lt;html />` hat korrektes lang-Attribut" />
+<StoredCheckbox key="tabindex" label="Es gibt bei tabindex nur 0 oder -1" />
+<StoredCheckbox key="a-tag" label="`&lt;a />-Tag` wird für alle Links verwendet -> Seitenwechsel" />
+<StoredCheckbox key="button-tag" label="`&lt;button />-Tag` wird für alle Buttons, Klick- und Action-Flächen genutzt (kein div mit onclick etc.)" />
 
 <h2>Content</h2>
 
-<Checkbox>`&lt;button />`, `&lt;a />` und `&lt;label />` sind eindeutig und selbsterklärend</Checkbox> <br />
-<Checkbox>Es gibt nur eine `&lt;h1 />` pro Seite</Checkbox> <br />
+<StoredCheckbox key="button-a-label" label="`&lt;button />`, `&lt;a />` und `&lt;label />` sind eindeutig und selbsterklärend" />
+<StoredCheckbox key="h1-per-page" label="Es gibt nur ein `&lt;h1 />` pro Seite" />
 
 <h2>Bilder</h2>
 
-<Checkbox>Alle `&lt;img />-Elemente` haben ein alt-Attribut</Checkbox> <br />
-<Checkbox>rein dekorative SVGs haben `aria-hidden="true"`</Checkbox> <br />
-<Checkbox>`&lt;img />-Elemente` mit source SVG haben das role-Attribut `role="img"`</Checkbox> <br />
+<StoredCheckbox key="img-alt" label="Alle `&lt;img />-Elemente` haben ein alt-Attribut" />
+<StoredCheckbox key="svg-aria-hidden" label="rein dekorative SVGs haben `aria-hidden=&quot;true&quot;`" />
+<StoredCheckbox key="img-svg-role" label="`&lt;img />-Elemente` mit source SVG haben das role-Attribut `role=&quot;img&quot;`" />
 
 <h2>Formulare</h2>
 
-<Checkbox>Alle Inputs sind mit einem entsprechenden Label verbunden</Checkbox> <br />
-<Checkbox>Form-Inputs unterstützen grundsätzlich Autovervollständigung</Checkbox> <br />
-<Checkbox>Eingabefehler werden direkt mit den entsprechenden Feldern assoziiert</Checkbox> <br />
+<StoredCheckbox key="inputs-labels" label="Alle Inputs sind mit einem entsprechenden Label verbunden" />
+<StoredCheckbox key="form-input-autocomplete" label="Form-Inputs unterstützen grundsätzlich Autovervollständigung" />
+<StoredCheckbox key="input-errors" label="Eingabefehler werden direkt mit den entsprechenden Feldern assoziiert" />
 
 <h2>Mobil</h2>
 
-<Checkbox>Die Seite kann nicht horizontal gescrollt werden</Checkbox> <br />
-<Checkbox>Viewport Zoom ist deaktiviert</Checkbox> <br />
-<Checkbox>Alle Klick-Flächen mind. `44x44px`, außer bei Inline-Elementen wie Links</Checkbox> <br />
+<StoredCheckbox key="no-horizontal-scroll" label="Die Seite kann nicht horizontal gescrollt werden" />
+<StoredCheckbox key="viewport-zoom" label="Viewport Zoom ist deaktiviert" />
+<StoredCheckbox key="click-areas-size" label="Alle Klick-Flächen mind. `44x44px`, außer bei Inline-Elementen wie Links" />
 
 <h2>Tastatur</h2>
 
-<Checkbox>Tastatursteuerung muss komplett möglich sein</Checkbox> <br />
-<Checkbox>Alle interaktiven Elemente müssen einen sichtbaren focustyle haben</Checkbox> <br />
-<Checkbox>Keyboard-Focus-Reihenfolge gleicht der des visuellen Layouts</Checkbox> <br />
-<Checkbox>Es gibt keine unsichtbaren fokusierbaren Elemente</Checkbox> <br />
-<Checkbox>Buttons können über Leertaste und Eingabetaste betätigt werden</Checkbox> <br />
-<Checkbox>Menüs und Overlays können via ESC-Taste wieder geschlossen werden</Checkbox> <br />
-
+<StoredCheckbox key="keyboard-control" label="Tastatursteuerung muss komplett möglich sein" />
+<StoredCheckbox key="interactive-elements-focus" label="Alle interaktiven Elemente müssen einen sichtbaren focustyle haben" />
+<StoredCheckbox key="keyboard-focus-order" label="Keyboard-Focus-Reihenfolge gleicht der des visuellen Layouts" />
+<StoredCheckbox key="no-invisible-focusable" label="Es gibt keine unsichtbaren fokusierbaren Elemente" />
+<StoredCheckbox key="buttons-space-enter" label="Buttons können über Leertaste und Eingabetaste betätigt werden" />
+<StoredCheckbox key="menus-overlays-esc" label="Menüs und Overlays können via ESC-Taste wieder geschlossen werden" />
 
 <p><strong>Stand 02.2024</strong></p>

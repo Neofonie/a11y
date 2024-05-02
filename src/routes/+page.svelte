@@ -1,5 +1,6 @@
 <script lang="ts">
   import Checkbox from "$lib/checkbox.svelte";
+  import StoredInput from "$lib/stored-input.svelte";
 
   function save(key: string, value: boolean) {
     console.log("saving key", key, value);
@@ -38,12 +39,17 @@
 <h2>Allgemein</h2>
 
 <Checkbox
-  checked={load("auto-tests")}
+  value={load("auto-tests")}
   on:change={handleChange('auto-tests')}
 >Alle automatischen Accessibility-Tests laufen durch</Checkbox>
+<StoredInput key="auto-tests" let:value let:handleChange>
+  <Checkbox {value} on:change={handleChange}>Alle automatischen Accessibility-Tests laufen durch</Checkbox>
+</StoredInput>
+
 <Checkbox>Axe Chrome extension</Checkbox>
 <Checkbox>Wave Chrome Erweiterung</Checkbox>
 <Checkbox>Lighthouse (Accessibility)</Checkbox>
+
 
 <h2>Markup</h2>
 

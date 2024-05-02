@@ -3,7 +3,14 @@
   import Github from "$lib/components/github.svelte";
 </script>
 
-<Github />
+<svelte:head>
+    <script
+        type="module"
+        src="/node_modules/playground-elements/playground-ide.js"
+    ></script>
+</svelte:head>
+
+<Github/>
 
 <h1>
   Test Accessibility „A11y“ (11 stehen für 11 Buchstaben ergo eine abkürzung)
@@ -32,6 +39,21 @@
   key="html-lang"
   label="`&lt;html />` hat korrektes lang-attribut"
 />
+
+<playground-ide editable-file-system line-numbers resizable>
+  <script type="sample/html" filename="index.html">
+    <!doctype html>
+    <body>
+      Hello
+      <script type="module" src="./index.js">&lt;/script>
+    </body>
+  </script>
+
+  <script type="sample/ts" filename="index.ts">
+    document.body.appendChild(document.createTextNode("World!"))
+  </script>
+</playground-ide>
+
 <StoredCheckbox key="tabindex" label="Es gibt bei tabindex nur 0 oder -1" />
 <StoredCheckbox
   key="a-tag"

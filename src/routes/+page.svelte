@@ -2,7 +2,13 @@
   import Checkbox from "$lib/checkbox.svelte";
   import StoredCheckbox from "$lib/stored-checkbox.svelte";
   // import StoredInput from "$lib/stored-input.svelte";
+    //import Checkbox from '$lib/components/checkbox.svelte';
+    import Github from '$lib/components/github.svelte';
 </script>
+
+<Github/>
+
+<h1>Test Accessibility „A11y“ (11 stehen für 11 Buchstaben ergo eine abkürzung)</h1>
 
 <h1>
   Test Accessibility „A11y“ (11 stehen für 11 Buchstaben ergo eine abkürzung)
@@ -16,11 +22,7 @@
 
 <h2>Allgemein</h2>
 
-<!-- <StoredInput key="auto-tests" let:value let:handleChange>
-  <Checkbox {value} on:change={handleChange}>Alle automatischen Accessibility-Tests laufen durch</Checkbox>
-</StoredInput> -->
-
-<StoredCheckbox key="auto-tests" label="Alle automatischen Accessibility-Tests laufen durch" />
+<StoredCheckbox key="auto-tests">Alle automatischen Accessibility-Tests laufen durch <div slot="named">huhu</div></StoredCheckbox>
 
 <StoredCheckbox key="axe-chrome-extension" label="Axe Chrome extension" />
 <StoredCheckbox key="wave-chrome-extension" label="Wave Chrome Erweiterung" />

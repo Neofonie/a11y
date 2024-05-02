@@ -1,8 +1,5 @@
 <script lang="ts">
   import StoredCheckbox from "$lib/components/stored-checkbox.svelte";
-  // import StoredInput from "$lib/stored-input.svelte";
-  // import Checkbox from "$lib/checkbox.svelte";
-  // import Checkbox from '$lib/components/checkbox.svelte';
   import Github from "$lib/components/github.svelte";
 </script>
 
@@ -20,8 +17,7 @@
 
 <h2>Allgemein</h2>
 
-<StoredCheckbox key="auto-tests">
-  Alle automatischen Accessibility-Tests laufen durch
+<StoredCheckbox key="auto-tests" label="Alle automatischen Accessibility-Tests laufen durch">
   <div slot="named">huhu</div>
 </StoredCheckbox>
 

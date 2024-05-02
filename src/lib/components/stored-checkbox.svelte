@@ -9,7 +9,8 @@
 
 <div>
 <StoredInput {key} let:value let:handleChange>
-  <Checkbox {value} on:change={handleChange}>{label}</Checkbox>
+  <Checkbox {value} on:change={handleChange} label={label}></Checkbox>
+  <slot></slot>
   <slot name="named" />
 </StoredInput>
 </div>

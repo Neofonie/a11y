@@ -15,7 +15,7 @@
 </script>
 
 <div class="checkbox">
-  <input type="checkbox" bind:checked={value} on:click={handleChange} />
+  <input type="checkbox" class="mr-1 h-4 w-4 relative top-0.5" bind:checked={value} on:click={handleChange} />
   {#if label}
     <label for="checkbox">{label}</label>
   {:else}

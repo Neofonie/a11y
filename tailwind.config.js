@@ -5,5 +5,5 @@ export default {
     extend: {},
   },
   plugins: [require("daisyui")],
-  prefix: "tw-",
+  //prefix: "tw-",
 };

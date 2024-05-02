@@ -1,6 +1,7 @@
 <script type="ts">
     import Checkbox from '$lib/components/checkbox.svelte';
     import Github from '$lib/components/github.svelte';
+    import BuildDate from '$lib/components/buildDate.svelte';
 </script>
 
 <Github/>
@@ -58,5 +59,4 @@ Jede Komponente/Seite sollte gegen diese Checkliste geprüft werden.</p>
 <label><input type="checkbox">Buttons können über Leertaste und Eingabetaste betätigt werden</label> <br />
 <label><input type="checkbox">Menüs und Overlays können via ESC-Taste wieder geschlossen werden</label> <br />
 
-
-<p><strong>Stand 02.2024</strong></p>
+<BuildDate />

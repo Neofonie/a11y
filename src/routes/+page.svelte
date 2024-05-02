@@ -1,29 +1,6 @@
 <script lang="ts">
   import Checkbox from "$lib/checkbox.svelte";
   import StoredInput from "$lib/stored-input.svelte";
-
-  function save(key: string, value: boolean) {
-    console.log("saving key", key, value);
-    if (typeof window !== 'undefined') {
-      localStorage.setItem(key, value ? "true" : "false");
-    }
-  }
-
-  function load(key: string) {
-    console.log("loading key", key);
-    if (typeof window !== 'undefined') {
-      console.log("load", key, localStorage.getItem(key));
-      return localStorage.getItem(key) === "true";
-    }
-    return false;
-  }
-
-  function handleChange(key: string) {
-    return (event: CustomEvent) => {
-      console.log("handleChange", key, event.detail.checked);
-      save(key, event.detail.checked);
-    };
-  }
 </script>
 
 <h1>
@@ -38,10 +15,6 @@
 
 <h2>Allgemein</h2>
 
-<Checkbox
-  value={load("auto-tests")}
-  on:change={handleChange('auto-tests')}
->Alle automatischen Accessibility-Tests laufen durch</Checkbox>
 <StoredInput key="auto-tests" let:value let:handleChange>
   <Checkbox {value} on:change={handleChange}>Alle automatischen Accessibility-Tests laufen durch</Checkbox>
 </StoredInput>

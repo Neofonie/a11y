@@ -10,6 +10,12 @@
 <p>Diese Checkliste wird von unseren Entwicklern genutzt, um eine gewisse Barriere-Freiheit für unsere Endkunden zu gewährleisten.
 Jede Komponente/Seite sollte gegen diese Checkliste geprüft werden.</p>
 
+<h2>Links</h2>
+
+<ul>
+  <li><a href="https://www.w3schools.com/accessibility/index.php">W3School Accessibility Tutorial</a></li>
+</ul>
+
 <h2>Allgemein</h2>
 
 <StoredCheckbox key="auto-tests" label="Alle automatischen Accessibility-Tests laufen durch" />

@@ -1,3 +1,7 @@
+<script>
+  import Checkbox from "$lib/checkbox.svelte";
+
+</script>
 <h1>Test Accessibility „A11y“ (11 stehen für 11 Buchstaben ergo eine abkürzung)</h1>
 
 <p>Diese Checkliste wird von unseren Entwicklern genutzt um eine gewisse Barriere-Freiheit für unsere Endkunden zu gewährleisten.
@@ -5,49 +9,49 @@ Jede Komponente/Seite sollte gegen diese Checkliste geprüft werden.</p>
 
 <h2>Allgemein</h2>
 
-<label><input type="checkbox">Alle automatischen Accessibility-Tests laufen durch</label> <br />
-<label><input type="checkbox">Axe Chrome extension</label> <br />
-<label><input type="checkbox">Wave Chrome Erweiterung</label> <br />
-<label><input type="checkbox">Lighthouse (Accessibility)</label> <br />
+<Checkbox key="auto-tests">Alle automatischen Accessibility-Tests laufen durch</Checkbox>
+<Checkbox key="axe-chrome-ext">Axe Chrome extension</Checkbox>
+<Checkbox>Wave Chrome Erweiterung</Checkbox>
+<Checkbox>Lighthouse (Accessibility)</Checkbox>
 
 <h2>Markup</h2>
 
-<label><input type="checkbox">`&lt;html />` hat korrektes lang-attribut</label> <br />
-<label><input type="checkbox">Es gibt bei tabindex nur 0 oder -1</label> <br />
-<label><input type="checkbox">`&lt;a />-Tag` wird für alle Links verwendet -> Seitenwechseln</label> <br />
-<label><input type="checkbox">`&lt;button />-Tag` wird für alle Buttons/Klick/Actionflächen genutzt (kein div mit onclick etc.)</label> <br />
+<Checkbox>`&lt;html />` hat korrektes lang-attribut</Checkbox>
+<Checkbox>Es gibt bei tabindex nur 0 oder -1</Checkbox>
+<Checkbox>`&lt;a />-Tag` wird für alle Links verwendet -> Seitenwechseln</Checkbox>
+<Checkbox>`&lt;button />-Tag` wird für alle Buttons/Klick/Actionflächen genutzt (kein div mit onclick etc.)</Checkbox>
 
 <h2>Content</h2>
 
-<label><input type="checkbox">`&lt;button />`, `&lt;a />` und `&lt;label />` sind eindeutig und selbsterklärend</label> <br />
-<label><input type="checkbox">Es gibt nur eine `&lt;h1 />` pro Seite</label> <br />
+<Checkbox>`&lt;button />`, `&lt;a />` und `&lt;label />` sind eindeutig und selbsterklärend</Checkbox>
+<Checkbox>Es gibt nur eine `&lt;h1 />` pro Seite</Checkbox>
 
 <h2>Bilder</h2>
 
-<label><input type="checkbox">Alle `&lt;img />-Elemente` haben ein Alt-Attribut</label> <br />
-<label><input type="checkbox">rein dekorative SVGs haben `aria-hidden="true"`</label> <br />
-<label><input type="checkbox">`&lt;img />-Elemente` mit source SVG haben das role Attribut `role="img"`</label> <br />
+<Checkbox>Alle `&lt;img />-Elemente` haben ein Alt-Attribut</Checkbox>
+<Checkbox>rein dekorative SVGs haben `aria-hidden="true"`</Checkbox>
+<Checkbox>`&lt;img />-Elemente` mit source SVG haben das role Attribut `role="img"`</Checkbox>
 
 <h2>Formulare</h2>
 
-<label><input type="checkbox">Alle Inputs sind mit entsprechenden Label verbunden</label> <br />
-<label><input type="checkbox">Form Input unterstützen grundsätzlich autocomplete</label> <br />
-<label><input type="checkbox">Input Errors werden direkt mit den entsprechenden Feldern assoziiert</label> <br />
+<Checkbox>Alle Inputs sind mit entsprechenden Label verbunden</Checkbox>
+<Checkbox>Form Input unterstützen grundsätzlich autocomplete</Checkbox>
+<Checkbox>Input Errors werden direkt mit den entsprechenden Feldern assoziiert</Checkbox>
 
 <h2>Mobile</h2>
 
-<label><input type="checkbox">Die Seite kann nicht horizontal gescrollt werden</label> <br />
-<label><input type="checkbox">Viewport Zoom ist deaktiviert</label> <br />
-<label><input type="checkbox">Alle Klickflächen mind. `44x44px`, außer bei Inline-Elementen wie Links</label> <br />
+<Checkbox>Die Seite kann nicht horizontal gescrollt werden</Checkbox>
+<Checkbox>Viewport Zoom ist deaktiviert</Checkbox>
+<Checkbox>Alle Klickflächen mind. `44x44px`, außer bei Inline-Elementen wie Links</Checkbox>
 
 <h2>Tastatur</h2>
 
-<label><input type="checkbox">Tastatursteuerung muss komplett möglich sein</label> <br />
-<label><input type="checkbox">Alle interaktiven Elemente müssen einen sichtbaren focustyle haben</label> <br />
-<label><input type="checkbox">Keyboard-Focus Reihenfolge gleicht der des visuellen Layouts</label> <br />
-<label><input type="checkbox">Es gibt keine unsichtbaren fokusierbaren Elemente</label> <br />
-<label><input type="checkbox">Buttons können über Leertaste und Eingabetaste betätigt werden</label> <br />
-<label><input type="checkbox">Menüs und Overlays können via ESC-Taste wieder geschlossen werden</label> <br />
+<Checkbox>Tastatursteuerung muss komplett möglich sein</Checkbox>
+<Checkbox>Alle interaktiven Elemente müssen einen sichtbaren focustyle haben</Checkbox>
+<Checkbox>Keyboard-Focus Reihenfolge gleicht der des visuellen Layouts</Checkbox>
+<Checkbox>Es gibt keine unsichtbaren fokusierbaren Elemente</Checkbox>
+<Checkbox>Buttons können über Leertaste und Eingabetaste betätigt werden</Checkbox>
+<Checkbox>Menüs und Overlays können via ESC-Taste wieder geschlossen werden</Checkbox>
 
 
 <p><strong>Stand 02.2024</strong></p>

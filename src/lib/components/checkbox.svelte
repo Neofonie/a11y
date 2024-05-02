@@ -4,6 +4,7 @@
   export let value: boolean = false;
 
   import { createEventDispatcher } from "svelte";
+  // import "$lib/global.css";
 
   const dispatch = createEventDispatcher();
 
@@ -25,7 +26,8 @@
   </div>
 </div>
 
-<style>
+<style lang="scss">
+  //@import "$lib/global.css";
   .checkbox {
     &.slot {
       background: red;

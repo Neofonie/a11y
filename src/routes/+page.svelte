@@ -1,6 +1,9 @@
 <script type="ts">
-    import Checkbox from '$lib/components/checkbox.svelte'
+    import Checkbox from '$lib/components/checkbox.svelte';
+    import Github from '$lib/components/github.svelte';
 </script>
+
+<Github/>
 
 <h1>Test Accessibility „A11y“ (11 stehen für 11 Buchstaben ergo eine abkürzung)</h1>
 

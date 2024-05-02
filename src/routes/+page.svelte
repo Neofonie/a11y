@@ -1,6 +1,7 @@
 <script lang="ts">
-  import StoredCheckbox from "$lib/components/stored-checkbox.svelte";
-  import Github from "$lib/components/github.svelte";
+    import StoredCheckbox from "$lib/components/stored-checkbox.svelte";
+    import Github from "$lib/components/github.svelte";
+    import BuildDate from '$lib/components/buildDate.svelte';
 </script>
 
 <svelte:head>
@@ -144,4 +145,4 @@
   label="Menüs und Overlays können via ESC-Taste wieder geschlossen werden"
 />
 
-<p><strong>Stand 02.2024</strong></p>
+<BuildDate />

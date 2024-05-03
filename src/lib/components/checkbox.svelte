@@ -1,35 +1,38 @@
 <!-- checkbox.svelte -->
 <script lang="ts">
-  export let label: string = "";
-  export let value: boolean = false;
+    import SvelteMarkdown from 'svelte-markdown';
+    import {createEventDispatcher} from 'svelte';
 
-  import { createEventDispatcher } from "svelte";
+    export let label: string = '';
 
-  const dispatch = createEventDispatcher();
+    export let value: boolean = false;
 
-  function handleChange() {
-    value = !value;
-    dispatch("change", { checked: value });
-  }
+    const dispatch = createEventDispatcher();
+
+    // dispatch native change-Event because we are custom in here
+    function handleChange() {
+        value = !value;
+        dispatch('change', {checked: value});
+    }
 </script>
 
-<div class="checkbox">
-  <input type="checkbox" class="mr-1 h-4 w-4 relative top-0.5" bind:checked={value} on:click={handleChange} />
-  {#if label}
-    <label for="checkbox">{label}</label>
-  {:else}
-    <slot />
-  {/if}
-
-  <div class="checkbox slot">
-    <slot name="named" />
-  </div>
-</div>
-
 <style>
-  .checkbox {
-    &.slot {
-      background: red;
-    }
+    :global(code) {
+        background: #f3f3f3;
+        padding: 2px 4px;
+        border-radius: 6px;
     }
 </style>
+
+<label class="flex gap-2 items-center">
+    <input type="checkbox" class="h-4 w-4 shrink-0" bind:checked={value} on:click={handleChange}/>
+    <div>
+        {#if label}
+            <SvelteMarkdown source={label}/>
+        {:else}
+            <slot/>
+        {/if}
+
+        <slot name="show-code"/>
+    </div>
+</label>

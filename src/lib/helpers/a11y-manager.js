@@ -10,7 +10,6 @@
  */
 const
     a11yRuleset = {
-        lastChange: '02.2024',
         groups: {
             'Allgemein' : {},
             'Markup' : {
@@ -80,7 +79,7 @@ Array
  * Used to execute all a11y-test in the ruleset which are flagged to be active. This
  *  is automatically triggered as soon any linked node for a rule changes its state.
  */
-function testA11yRules() {
+export function testA11yRules() {
     if (a11yDomContext) {
         Object
             .keys(flatA11yRuleset)
@@ -117,18 +116,21 @@ export function watchedA11yContent(dom) {
  * @returns object
  */
 export function linkA11yRule(node) {
-    if (node && node.id) {
-        node.addEventListener('change', () => {
-            if (flatA11yRuleset[node.id]) {
+    if (node && node.id && flatA11yRuleset[node.id]) {
+        // Due to the reactivity of svelte a simple 'change'-listener
+        //  doesn't help here, unfortunately 'MutationObserver' won't
+        //  work either (at least in the developemt enviroment as we
+        //  run a NodeJS), so the simpliest solution for now is a
+        //  setInterval (w/o extra dependencies).
+        setInterval(() => {
+            if (node.checked !== flatA11yRuleset[node.id].isActive) {
                 flatA11yRuleset[node.id].isActive = node.checked;
+                testA11yRules();
             }
-
-            testA11yRules();
-        });
-        if (flatA11yRuleset[node.id]) {
-            flatA11yRuleset[node.id].linked = node;
-            node.classList.add('--a11yRuleLinked');
-        }
+        }, 100);
+        flatA11yRuleset[node.id].linked = node;
+        flatA11yRuleset[node.id].isActive = node.checked;
+        node.classList.add('--a11yRuleLinked');
     }
     return {
 		destroy() {}

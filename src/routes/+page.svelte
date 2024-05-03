@@ -1,61 +1,121 @@
+<script lang="ts">
+  import BuildDate from '$lib/components/buildDate.svelte';
+  import Github from "$lib/components/github.svelte";
+  import Link from "$lib/components/link.svelte";
+  import StoredCheckbox from "$lib/components/stored-checkbox.svelte";
+    import SplitPane from '$lib/components/split-pane.svelte';
+    import A11yInspector from '$lib/components/a11y-inspector.svelte';
+    import { ruleset } from '$lib/helpers/a11y-manager.js';
+</script>
+
+<svelte:head>
+    <script type="module" src="/node_modules/playground-elements/playground-ide.js"></script>
+</svelte:head>
+
+<Github/>
+
 <SplitPane
     class="splitpane"
     initialPosition="50%"
 >
     <div slot="first">
-        <h1>Test Accessibility „A11y“ (11 stehen für 11 Buchstaben ergo eine abkürzung)</h1>
+        <div class="container mx-auto px-4 py-4">
+            <h1>
+            Test Accessibility „A11y“ (11 stehen für 11 Buchstaben, ergo eine Abkürzung)
+            </h1>
 
-        <p>Diese Checkliste wird von unseren Entwicklern genutzt um eine gewisse Barriere-Freiheit für unsere Endkunden zu gewährleisten.
-        Jede Komponente/Seite sollte gegen diese Checkliste geprüft werden.</p>
-        
-        <h2>Allgemein</h2>
-        
-        <label><input type="checkbox">Alle automatischen Accessibility-Tests laufen durch</label> <br />
-        <label><input type="checkbox">Axe Chrome extension</label> <br />
-        <label><input type="checkbox">Wave Chrome Erweiterung</label> <br />
-        <label><input type="checkbox">Lighthouse (Accessibility)</label> <br />
-        
-        <h2>Markup</h2>
-        
-        <label><input type="checkbox">`&lt;html />` hat korrektes lang-attribut</label> <br />
-        <label><input type="checkbox">Es gibt bei tabindex nur 0 oder -1</label> <br />
-        <label><input type="checkbox">`&lt;a />-Tag` wird für alle Links verwendet -> Seitenwechseln</label> <br />
-        <label><input type="checkbox">`&lt;button />-Tag` wird für alle Buttons/Klick/Actionflächen genutzt (kein div mit onclick etc.)</label> <br />
-        
-        <h2>Content</h2>
-        
-        <label><input type="checkbox">`&lt;button />`, `&lt;a />` und `&lt;label />` sind eindeutig und selbsterklärend</label> <br />
-        <label><input type="checkbox">Es gibt nur eine `&lt;h1 />` pro Seite</label> <br />
-        
-        <h2>Bilder</h2>
-        
-        <label><input type="checkbox">Alle `&lt;img />-Elemente` haben ein Alt-Attribut</label> <br />
-        <label><input type="checkbox">rein dekorative SVGs haben `aria-hidden="true"`</label> <br />
-        <label><input type="checkbox">`&lt;img />-Elemente` mit source SVG haben das role Attribut `role="img"`</label> <br />
-        
-        <h2>Formulare</h2>
-        
-        <label><input type="checkbox">Alle Inputs sind mit entsprechenden Label verbunden</label> <br />
-        <label><input type="checkbox">Form Input unterstützen grundsätzlich autocomplete</label> <br />
-        <label><input type="checkbox">Input Errors werden direkt mit den entsprechenden Feldern assoziiert</label> <br />
-        
-        <h2>Mobile</h2>
-        
-        <label><input type="checkbox">Die Seite kann nicht horizontal gescrollt werden</label> <br />
-        <label><input type="checkbox">Viewport Zoom ist deaktiviert</label> <br />
-        <label><input type="checkbox">Alle Klickflächen mind. `44x44px`, außer bei Inline-Elementen wie Links</label> <br />
-        
-        <h2>Tastatur</h2>
-        
-        <label><input type="checkbox">Tastatursteuerung muss komplett möglich sein</label> <br />
-        <label><input type="checkbox">Alle interaktiven Elemente müssen einen sichtbaren focustyle haben</label> <br />
-        <label><input type="checkbox">Keyboard-Focus Reihenfolge gleicht der des visuellen Layouts</label> <br />
-        <label><input type="checkbox">Es gibt keine unsichtbaren fokusierbaren Elemente</label> <br />
-        <label><input type="checkbox">Buttons können über Leertaste und Eingabetaste betätigt werden</label> <br />
-        <label><input type="checkbox">Menüs und Overlays können via ESC-Taste wieder geschlossen werden</label> <br />
-        
-        
-        <p><strong>Stand 02.2024</strong></p>
+            <p>
+                Diese Checkliste wird von unseren Entwicklern genutzt, um eine gewisse Barriere-Freiheit für unsere Endkunden zu gewährleisten.
+                Jede Komponente/Seite sollte gegen diese Checkliste geprüft werden.
+            </p>
+
+            <h2 class="mt-4 mb-1">Links</h2>
+
+            <Link href="https://www.w3schools.com/accessibility/index.php">W3School Accessibility Tutorial</Link>
+            <Link href="https://developer.mozilla.org/en-US/docs/Learn/Accessibility">MDN Dev Docs: Accessibility</Link>
+            <Link href="https://www.w3.org/TR/WCAG20/">Web Content Accessibility Guidelines (WCAG)</Link>
+            <Link href="https://www.barrierefreiheit-dienstekonsolidierung.bund.de/Webs/PB/DE/barrierefreie_it/digitale-barrierefreiheit/digitale-barrierefreiheit-node.html">Digitale Barrierefreiheit (Bundesministerium des Innern und für Heimat)</Link>
+
+            <h2 class="mt-4 mb-1">Allgemein</h2>
+
+            <StoredCheckbox key="auto-tests">
+                Alle automatischen Accessibility-Tests laufen durch
+                <div slot="named">huhu</div>
+            </StoredCheckbox>
+
+            <StoredCheckbox key="axe-chrome-extension" label="Axe Chrome Extension" />
+            <StoredCheckbox key="wave-chrome-extension" label="Wave Chrome Extension" />
+            <StoredCheckbox key="lighthouse" label="Lighthouse (Accessibility)" />
+
+            <h2 class="mt-4 mb-1 ">Markup</h2>
+
+            <StoredCheckbox key="html-lang" label="`&lt;html />` hat korrektes lang-Attribut" />
+
+            <playground-ide editable-file-system line-numbers resizable>
+                <script type="sample/html" filename="index.html">
+                    <!doctype html>
+                    <body>
+                    Hello
+                    <script type="module" src="./index.js">&lt;/script>
+                    </body>
+                </script>
+
+                <script type="sample/ts" filename="index.ts">
+                document.body.appendChild(document.createTextNode("World!"))
+                </script>
+            </playground-ide>
+
+            <StoredCheckbox key="tabindex" label="Es gibt bei tabindex nur 0 oder -1" />
+            <StoredCheckbox key="a-tag" label="`&lt;a />-Tag` wird für alle Links verwendet -> Seitenwechseln" />
+            <StoredCheckbox key="button-tag"
+                label="`&lt;button />-Tag` wird für alle Buttons, Klick- und Action-Flächen genutzt (kein div mit onclick etc.)" />
+            <StoredCheckbox
+                key="ul-ol-tags"
+                label="Wenn ein `&lt;ol>`- oder `&lt;ul>-Element` vorhanden ist, sollte es mindestens ein `&lt;li>-Element` enthalten. Wenn ein `&lt;dl>-Element` vorhanden ist, sollte es mindestens ein `&lt;dt>-Element` enthalten."
+            />
+
+            <h2 class="mt-4 mb-1">Content</h2>
+
+            <StoredCheckbox key="button-a-label"
+                label="`&lt;button />`, `&lt;a />` und `&lt;label />` sind eindeutig und selbsterklärend" />
+            <StoredCheckbox key="h1-per-page" label="Es gibt nur eine `&lt;h1 />` pro Seite" />
+
+            <h2 class="mt-4 mb-1">Bilder</h2>
+            <StoredCheckbox key="img-alt" label="Alle `&lt;img />-Elemente` haben ein Alt-Attribut" />
+            <StoredCheckbox key="svg-aria-hidden" label="rein dekorative SVGs haben `aria-hidden=&quot;true&quot;`" />
+            <StoredCheckbox key="img-svg-role"
+                label="&lt;img />-Elemente` mit source SVG haben das role-Attribut `role=&quot;img&quot;`" />
+
+            <h2 class="mt-4 mb-1">Video & Audio</h2>
+
+            <StoredCheckbox
+                key="videos-audios-playable"
+                label="Die automatische Wiedergabefunktion für Video (sowie für Audio oder andere Multimedia) ist entfernt. Benutzer können die Wiedergabe  starten, anhalten und stoppen."
+            />
+
+            <h2 class="mt-4 mb-1">Formulare</h2>
+
+            <StoredCheckbox key="inputs-labels" label="Alle Inputs sind mit einem entsprechenden Label verbunden" />
+            <StoredCheckbox key="form-input-autocomplete" label="Form-Inputs unterstützen grundsätzlich Autovervollständigung" />
+            <StoredCheckbox key="input-errors" label="Eingabefehler werden direkt mit den entsprechenden Feldern assoziiert" />
+
+            <h2 class="mt-4 mb-1">Mobil</h2>
+
+            <StoredCheckbox key="no-horizontal-scroll" label="Die Seite kann nicht horizontal gescrollt werden" />
+            <StoredCheckbox key="viewport-zoom" label="Viewport Zoom ist deaktiviert" />
+            <StoredCheckbox key="click-areas-size"
+                label="Alle Klick-Flächen mind. `44x44px`, außer bei Inline-Elementen wie Links" />
+
+            <h2 class="mt-4 mb-1">Tastatur</h2>
+
+            <StoredCheckbox key="keyboard-control" label="Tastatursteuerung muss komplett möglich sein" />
+            <StoredCheckbox key="interactive-elements-focus"
+                label="Alle interaktiven Elemente müssen einen sichtbaren focustyle haben" />
+            <StoredCheckbox key="keyboard-focus-order" label="Keyboard-Focus-Reihenfolge gleicht der des visuellen Layouts" />
+            <StoredCheckbox key="no-invisible-focusable" label="Es gibt keine unsichtbaren fokusierbaren Elemente" />
+            <StoredCheckbox key="buttons-space-enter" label="Buttons können über Leertaste und Eingabetaste betätigt werden" />
+            <StoredCheckbox key="menus-overlays-esc" label="Menüs und Overlays können via ESC-Taste wieder geschlossen werden" />
+        </div>
 
         <hr />
 
@@ -65,23 +125,18 @@
 
                 {#each Object.keys(ruleset.groups[group]) as rule}
                     <div class="a11y-rule">
-                        <label><input type="checkbox" use:linkA11yRule id={rule}>{ruleset.groups[group][rule].description}</label> <br />
+                        <StoredCheckbox id={rule} key={rule} label={ruleset.groups[group][rule].description} />
                     </div>
                 {/each}
             </section>
         {/each}
-        <div>Stand {ruleset?.lastChange || '???'}</div>
+
+        <BuildDate />
     </div>
     <div slot="second">
         <A11yInspector></A11yInspector>
     </div>
 </SplitPane>
-
-<script>
-    import SplitPane from '$lib/components/split-pane.svelte';
-    import A11yInspector from '$lib/components/a11y-inspector.svelte';
-    import { linkA11yRule, ruleset } from '$lib/helpers/a11y-manager.js';
-</script>
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
@@ -154,8 +209,9 @@
     }
     .a11y-rule {
         position: relative;
+        height: var(---ally-rule-lineheight);
 
-        & > label {
+        & .checkbox {
             height: var(---ally-rule-lineheight);
             display: flex;
             align-items: center;

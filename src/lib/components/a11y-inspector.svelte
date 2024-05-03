@@ -6,7 +6,7 @@
 </section>
 
 <script>
-    import { watchedA11yContent } from '$lib/helpers/a11y-manager';
+    import { watchedA11yContent, testA11yRules } from '$lib/helpers/a11y-manager';
     import { onMount } from 'svelte';
 
     export let
@@ -39,6 +39,7 @@
                             doc = parser.parseFromString(rawHTML, "text/html");
 
                         watchedA11yContent(doc);
+                        testA11yRules();
                     }
                 });
         }

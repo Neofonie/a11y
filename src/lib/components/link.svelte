@@ -1,7 +1,6 @@
 <script lang="ts">
-    export let href;
+    export let href: string;
+    export let target: string = '_blank';
 </script>
 
-<ul>
-    <li><a href="{href}" target="_blank"><slot/></a></li>
-</ul>
+<a href="{href}" target="{target}"><slot/></a>

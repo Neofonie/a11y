@@ -21,18 +21,9 @@
   font-family: 'Camingo', arial, helvetica, sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
- font-family: 'Oswald', Arial, Helvetica, sans-serif;
- color: red;
-}
-
-h1 {
-  font-size: 2.5rem;
-}
-
-h2 {
-  font-weight: 600;
-  font-size: 1.5rem;
-  margin-bottom: 0.75rem;
+a, button.link {
+  color: red;
+  text-decoration: underline;
+  cursor: pointer;
 }
 

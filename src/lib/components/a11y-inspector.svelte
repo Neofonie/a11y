@@ -13,12 +13,17 @@
         src = 'https://google.com/';
     
     const
+        // The URL for the proxy-server we're using to bypass CORS-issues.
         proxyUrl = 'http://localhost:8080/';
 
     let
         elmIframe,
         inputDelay;
 
+    // As soon 'src' changes (like when editing text in input.address)
+    //  this will be triggered. We use `setTimeout` to delay the input
+    //  so loading will happen after the user has stopped typing after
+    //  a reasonable time (250ms).
     $:if (src) {
         if (inputDelay) {
             clearTimeout(inputDelay);
@@ -26,6 +31,14 @@
         inputDelay = setTimeout(() => loadPagePerProxy(), 250);
     }
 
+    /**
+     * Used to load an URL via proxy and to put the result either as DOM
+     *  into the a11y-inspector (`watchedA11yContent()`) and into the
+     *  IFRAME as rendered HTML-context. Note that the IFRAME will spill
+     *  out -a lot- of errors due to the reason that most additional
+     *  resource can't be requested due to CORS-issues, this is intentional
+     *  and an expected behaviour.
+     */
     function loadPagePerProxy() {
         if (src && elmIframe) {
             fetch(proxyUrl + src)
@@ -45,9 +58,9 @@
         }
     }
 
-    onMount(() => {
-        loadPagePerProxy();
-    });
+    // After mounting the component, we do an initial page load
+    //  in case an URL is already set.
+    onMount(loadPagePerProxy);
 </script>
 
 <style>

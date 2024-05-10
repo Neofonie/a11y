@@ -14,7 +14,7 @@
     
     const
         // The URL for the proxy-server we're using to bypass CORS-issues.
-        proxyUrl = 'http://localhost:8080/';
+        proxyUrl = 'http://a11y.neofonie.de:8080/';
 
     let
         elmIframe,

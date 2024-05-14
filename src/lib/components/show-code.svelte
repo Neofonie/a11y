@@ -2,18 +2,18 @@
     let showCode: boolean = false;
     const toggleCode = () => {
         showCode = !showCode;
-    }
+    };
 
     $: showPlayground = showCode;
 </script>
 
 <button class="link" on:click={toggleCode}>{!showPlayground ? 'Show' : 'Hide'} Code</button>
 {#if showPlayground}
-<playground-ide line-numbers resizable class="playground-theme-zenburn">
-    <svelte:element this="script" type="sample/html" filename="index.html">
-        <slot/>
-    </svelte:element>
-</playground-ide>
+    <playground-ide line-numbers resizable class="playground-theme-zenburn">
+        <svelte:element this="script" type="sample/html" filename="index.html">
+            <slot />
+        </svelte:element>
+    </playground-ide>
 {/if}
 
 <style>

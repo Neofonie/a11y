@@ -3,4 +3,4 @@
     export let target: string = '_blank';
 </script>
 
-<a href="{href}" target="{target}"><slot/></a>
+<a {href} {target}><slot /></a>

@@ -7,7 +7,18 @@
     $: showPlayground = showCode;
 </script>
 
-<button class="link" on:click={toggleCode}>Show Code</button>
+<button class="link" on:click={toggleCode}>{!showPlayground ? 'Show' : 'Hide'} Code</button>
 {#if showPlayground}
-<playground-ide editable-file-system line-numbers resizable><slot /></playground-ide>
+<playground-ide line-numbers resizable class="playground-theme-zenburn">
+    <svelte:element this="script" type="sample/html" filename="index.html">
+        <slot/>
+    </svelte:element>
+</playground-ide>
 {/if}
+
+<style>
+    :global(#playground) {
+        --playground-code-font-size: 18px;
+        --playground-highlight-color: #f00000;
+    }
+</style>

@@ -1,14 +1,18 @@
 {
   "name": "cors-proxy-server",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start:local": "node index.js",
+    "start": "pm2 start index.js",
+    "list": "pm2 list",
+    "monitor": "pm2 monitor",
+    "stop": "pm2 stop 0"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "cors-anywhere": "^0.4.4"
+    "cors-anywhere": "^0.4.4",
+    "pm2": "^5.3.1"
   }
 }

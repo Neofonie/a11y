@@ -1,4 +1,5 @@
 <script lang="ts">
+  import dedent from 'dedent';
   import Github from '$lib/components/github.svelte';
   import Link from '$lib/components/link.svelte';
   import Headline from '$lib/components/headline.svelte';
@@ -11,8 +12,7 @@
 </script>
 
 <svelte:head>
-    <!-- TODO: https://www.npmjs.com/package/playground-elements?activeTab=readme#other -->
-    <script type="module" src="/node_modules/playground-elements/playground-ide.js"></script>
+    <script type="module" src="https://google.github.io/playground-elements/playground-configurator.js"></script>
 </svelte:head>
 
 <Github/>
@@ -56,20 +56,24 @@
             <Headline tag="h2">Markup</Headline>
 
             <StoredCheckbox key="html-lang" label="`<html>-Tag` hat korrektes lang-Attribut">
-                <ShowCode slot="show-code">
-<script type="sample/html" filename="index.html">
-<!doctype html>
-    <html lang="de-DE"><!-- language-COUNTRY -->
-        <head></head>
-    <body>
-    ...
-    </body>
-</html>
-</script>
-                </ShowCode>
+                <ShowCode slot="show-code">{@html dedent`
+                    <!doctype html>
+                    <!-- lang="language-COUNTRY" -->
+                    <html lang="de-DE">
+                        <head></head>
+                        <body>
+                        ...
+                        </body>
+                    </html>
+                `}</ShowCode>
             </StoredCheckbox>
 
-            <StoredCheckbox key="tabindex" label="Es gibt bei tabindex nur 0 oder -1" />
+            <StoredCheckbox key="tabindex" label="Es gibt bei tabindex nur 0 oder -1">
+                <ShowCode slot="show-code">{@html dedent`
+                    <a href="url" tabindex="-1">Ich bin ein Link</a><br />
+                    <input type="text" tabindex="0" />
+                `}</ShowCode>
+            </StoredCheckbox>
             <StoredCheckbox key="a-tag" label="`<a>-Tag` wird für alle Links verwendet -> Seitenwechseln" />
             <StoredCheckbox key="button-tag"
                 label="`<button>-Tag` wird für alle Buttons, Klick- und Action-Flächen genutzt (kein div mit onclick etc.)" />

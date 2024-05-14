@@ -1,8 +1,8 @@
 <!-- checkbox.svelte -->
 <script lang="ts">
     import SvelteMarkdown from 'svelte-markdown';
-    import { linkA11yRule } from '$lib/helpers/a11y-manager.js';
-    import { onMount, createEventDispatcher } from 'svelte';
+    import {linkA11yRule} from '$lib/helpers/a11y-manager.js';
+    import {onMount, createEventDispatcher} from 'svelte';
 
     export let label: string = '';
     export let value: boolean = false;
@@ -29,15 +29,21 @@
     }
 </style>
 
-<label class="flex gap-2 items-center">
-    <input bind:this={elmCheckbox} {id} type="checkbox" class="h-4 w-4 shrink-0" bind:checked={value} on:click={handleChange}/>
+<div class="flex gap-2 items-start">
+    <input bind:this={elmCheckbox} {id}
+           type="checkbox"
+           class="h-4 w-4 mt-1 shrink-0"
+           bind:checked={value}
+           on:click={handleChange}/>
     <div>
-        {#if label}
-            <SvelteMarkdown source={label}/>
-        {:else}
-            <slot/>
-        {/if}
+        <label for={id}>
+            {#if label}
+                <SvelteMarkdown source={label}/>
+            {:else}
+                <slot/>
+            {/if}
+        </label>
 
         <slot name="show-code"/>
     </div>
-</label>
+</div>

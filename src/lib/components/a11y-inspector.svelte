@@ -41,7 +41,7 @@
      */
     function loadPagePerProxy() {
         if (src && elmIframe) {
-            fetch(proxyUrl + src)
+            fetch(proxyUrl + src.replace('https://', ''))
                 .then(response => response.text())
                 .then(rawHTML => {
                     elmIframe.src = `data:text/html;charset=utf-8,${escape(rawHTML)}`;

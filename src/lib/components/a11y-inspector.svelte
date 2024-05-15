@@ -14,7 +14,7 @@
     
     const
         // The URL for the proxy-server we're using to bypass CORS-issues.
-        proxyUrl = 'http://a11y.neofonie.de:8080/';
+        proxyUrl = 'https://a11y.neofonie.de/cors/';
 
     let
         elmIframe,
@@ -41,7 +41,7 @@
      */
     function loadPagePerProxy() {
         if (src && elmIframe) {
-            fetch(proxyUrl + src)
+            fetch(proxyUrl + src.replace('https://', ''))
                 .then(response => response.text())
                 .then(rawHTML => {
                     elmIframe.src = `data:text/html;charset=utf-8,${escape(rawHTML)}`;

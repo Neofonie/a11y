@@ -24,7 +24,7 @@
     <div slot="first">
         <div class="container mx-auto px-4 py-4">
             <Headline tag="h1">
-                Test Accessibility <span class="tooltip" data-tooltip="'11' steht für 11 Buchstaben, ergo für eine Abkürzung)">„A11y“</span>
+                Test Accessibility „A11y“ <span class="tooltip" data-tooltip="'11' steht für 11 Buchstaben, ergo für eine Abkürzung)">?</span>
             </Headline>
 
             <p>
@@ -187,6 +187,19 @@
             ---tooltip-anim: var(---tooltip-animTime) var(---tooltip-animDelay) var(---tooltip-animEase);
             position: relative;
             font: inherit;
+            background-color: white;
+            border-radius: 50%;
+            display: inline-flex;
+            width: 16px;
+            height: 16px;
+            font-size: 12px;
+            border: 1px solid currentColor;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            vertical-align: top;
+            transform: translateY(12px);
+            cursor: help;
 
             &::before, &::after {
                 position: absolute;
@@ -196,11 +209,11 @@
                 transition: transform var(---tooltip-anim), 
                             opacity var(---tooltip-anim);
                 pointer-events: none;
-                background-color: white;
+                background-color: inherit;
             }
             &::before {
                 content: attr(data-tooltip);
-                transform: translateY(var(---tooltip-yOffset));
+                transform: translate(-14px, calc(var(---tooltip-yOffset) - 10px));
                 font-size: 12px;
                 box-sizing: border-box;
                 border: 1px solid currentColor;
@@ -212,7 +225,7 @@
                 content: '';
                 width: 12px;
                 height: 12px;
-                transform: translate(16px, calc(var(---tooltip-yOffset) + 6px)) rotate(-45deg) skew(-15deg,-15deg);
+                transform: translate(2px, calc(var(---tooltip-yOffset) - 4px)) rotate(-45deg) skew(-15deg,-15deg);
                 border-left-width: 1px;
                 border-left-style: solid;
                 border-left-color: currentColor;

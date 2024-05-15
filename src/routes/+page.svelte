@@ -24,7 +24,7 @@
     <div slot="first">
         <div class="container mx-auto px-4 py-4">
             <Headline tag="h1">
-                Test Accessibility „A11y“ (11 stehen für 11 Buchstaben, ergo eine Abkürzung)
+                Test Accessibility <span class="tooltip" data-tooltip="'11' steht für 11 Buchstaben, ergo für eine Abkürzung)">„A11y“</span>
             </Headline>
 
             <p>
@@ -178,6 +178,55 @@
         & *:has(>.--a11yRuleLinked.--a11ySuccess)::after {
             content: '👍';
             background-color: hsl(120deg 100% 50%);
+        }
+        & .tooltip {
+            ---tooltip-yOffset: calc(-100% + 4px);
+            ---tooltip-animTime: 250ms;
+            ---tooltip-animDelay: 500ms;
+            ---tooltip-animEase: ease-in-out;
+            ---tooltip-anim: var(---tooltip-animTime) var(---tooltip-animDelay) var(---tooltip-animEase);
+            position: relative;
+            font: inherit;
+
+            &::before, &::after {
+                position: absolute;
+                top: 0;
+                left: 0;
+                opacity: 0;
+                transition: transform var(---tooltip-anim), 
+                            opacity var(---tooltip-anim);
+                pointer-events: none;
+                background-color: white;
+            }
+            &::before {
+                content: attr(data-tooltip);
+                transform: translateY(var(---tooltip-yOffset));
+                font-size: 12px;
+                box-sizing: border-box;
+                border: 1px solid currentColor;
+                padding: .25em;
+                border-radius: 5px;
+                white-space: nowrap;
+            }
+            &::after {
+                content: '';
+                width: 12px;
+                height: 12px;
+                transform: translate(16px, calc(var(---tooltip-yOffset) + 6px)) rotate(-45deg) skew(-15deg,-15deg);
+                border-left-width: 1px;
+                border-left-style: solid;
+                border-left-color: currentColor;
+                border-bottom-width: 1px;
+                border-bottom-style: solid;
+                border-bottom-color: currentColor;
+            }
+            &:hover {
+                ---tooltip-yOffset: -100%;
+
+                &::before, &::after {
+                    opacity: 1;
+                }
+            }
         }
     }
 

@@ -1,10 +1,3 @@
-<section>
-    <div class="viewport">
-        <input class="address" type="text" bind:value={src}>
-        <iframe bind:this={elmIframe} src="" title="a11y-inspector"></iframe>
-    </div>
-</section>
-
 <script>
     import { watchedA11yContent, testA11yRules } from '$lib/helpers/a11y-manager';
     import { onMount } from 'svelte';

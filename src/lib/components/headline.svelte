@@ -8,8 +8,17 @@
     }
 </script>
 
+<svelte:element this={tag} class={classNames}>
+    <slot />
+</svelte:element>
+
 <style>
-    h1, h2, h3, h4, h5, h6 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
         font-family: 'Oswald', Arial, Helvetica, sans-serif;
         color: red;
     }
@@ -23,7 +32,3 @@
         font-size: 1.5rem;
     }
 </style>
-
-<svelte:element this={tag} class={classNames}>
-    <slot/>
-</svelte:element>

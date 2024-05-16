@@ -14,7 +14,7 @@
     
     const
         // The URL for the proxy-server we're using to bypass CORS-issues.
-        proxyUrl = 'https://a11y.neofonie.de/cors/';
+        proxyUrl = 'https://a11y.neofonie.de/cors-hirse?url=';
 
     let
         elmIframe,

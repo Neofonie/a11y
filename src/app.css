@@ -2,25 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @font-face {
-  font-family: 'Camingo';
-  src: url('../src/assets/fonts/CamingoWeb.woff2') format('woff2');
+  font-family: "Camingo";
+  src: url("../src/assets/fonts/CamingoWeb.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Oswald';
-  src: url('../src/assets/fonts/Oswald-Regular.woff2') format('woff2');
+  font-family: "Oswald";
+  src: url("../src/assets/fonts/Oswald-Regular.woff2") format("woff2");
   font-weight: bold;
   font-style: normal;
 }
 
-
 :root {
-  --font-family-base: 'Camingo', Arial, Helvetica, sans-serif;
-  --font-family-title: 'Oswald', Arial, Helvetica, sans-serif;
+  --font-family-base: "Camingo", Arial, Helvetica, sans-serif;
+  --font-family-title: "Oswald", Arial, Helvetica, sans-serif;
   --ally-rule-lineheight: 32px;
   --color-primary-hsl: 0deg 100% 47.5%;
   --color-primary: hsl(var(--color-primary-hsl));
@@ -30,9 +28,9 @@
   font-family: var(--font-family-base);
 }
 
-a, button.link {
+a,
+button.link {
   color: var(--color-primary);
   text-decoration: underline;
   cursor: pointer;
 }
-

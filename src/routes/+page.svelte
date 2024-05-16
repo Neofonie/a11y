@@ -1,8 +1,6 @@
 <script lang="ts">
   import dedent from 'dedent';
-
   import { ruleset } from '$lib/helpers/a11y-manager.js';
-
   import A11yInspector from '$lib/components/a11y-inspector.svelte';
   import BuildDate from '$lib/components/build-date.svelte';
   import Github from '$lib/components/github.svelte';

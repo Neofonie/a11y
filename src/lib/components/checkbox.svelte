@@ -23,13 +23,12 @@
 
 <div class="flex items-start gap-2">
     <input bind:this={elmCheckbox} {id} type="checkbox" class="mt-1 h-4 w-4 shrink-0" bind:checked={value} on:click={handleChange} />
-    <div>
-        <label for={id}>
+    <div class="flex gap-1">
+        <label for={id} class="flex gap-1">
             {#if label}
                 <SvelteMarkdown source={label} />
-            {:else}
-                <slot />
             {/if}
+            <slot />
         </label>
 
         <slot name="show-code" />

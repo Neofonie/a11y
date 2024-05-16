@@ -1,14 +1,16 @@
 <script lang="ts">
   import dedent from 'dedent';
-  import Github from '$lib/components/github.svelte';
-  import Link from '$lib/components/link.svelte';
-  import Headline from '$lib/components/headline.svelte';
-  import StoredCheckbox from '$lib/components/stored-checkbox.svelte';
-  import ShowCode from '$lib/components/show-code.svelte';
-  import BuildDate from '$lib/components/build-date.svelte';
-  import SplitPane from '$lib/components/split-pane.svelte';
-  import A11yInspector from '$lib/components/a11y-inspector.svelte';
+
   import { ruleset } from '$lib/helpers/a11y-manager.js';
+
+  import A11yInspector from '$lib/components/a11y-inspector.svelte';
+  import BuildDate from '$lib/components/build-date.svelte';
+  import Github from '$lib/components/github.svelte';
+  import Headline from '$lib/components/headline.svelte';
+  import Link from '$lib/components/link.svelte';
+  import ShowCode from '$lib/components/show-code.svelte';
+  import SplitPane from '$lib/components/split-pane.svelte';
+  import StoredCheckbox from '$lib/components/stored-checkbox.svelte';
 </script>
 
 <svelte:head>
@@ -56,7 +58,7 @@
             <Headline tag="h2">Markup</Headline>
 
             <StoredCheckbox key="html-lang" label="`<html>-Tag` hat korrektes lang-Attribut">
-                <ShowCode slot="show-code">{@html dedent`
+                <ShowCode slot="show-code" title="HTML mit 'lang-Attribute'">{@html dedent`
                     <!doctype html>
                     <!-- lang="language-COUNTRY" -->
                     <html lang="de-DE">
@@ -69,7 +71,7 @@
             </StoredCheckbox>
 
             <StoredCheckbox key="tabindex" label="Es gibt bei tabindex nur 0 oder -1">
-                <ShowCode slot="show-code">{@html dedent`
+                <ShowCode slot="show-code" title="'tabindex' mit 0 oder -1">{@html dedent`
                     <a href="url" tabindex="-1">Ich bin ein Link</a><br />
                     <input type="text" tabindex="0" />
                 `}</ShowCode>

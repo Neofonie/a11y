@@ -17,12 +17,21 @@
   font-style: normal;
 }
 
+
+:root {
+  --font-family-base: 'Camingo', Arial, Helvetica, sans-serif;
+  --font-family-title: 'Oswald', Arial, Helvetica, sans-serif;
+  --ally-rule-lineheight: 32px;
+  --color-primary-hsl: 0deg 100% 47.5%;
+  --color-primary: hsl(var(--color-primary-hsl));
+}
+
 * {
-  font-family: 'Camingo', arial, helvetica, sans-serif;
+  font-family: var(--font-family-base);
 }
 
 a, button.link {
-  color: red;
+  color: var(--color-primary);
   text-decoration: underline;
   cursor: pointer;
 }

@@ -1,7 +1,8 @@
 <script lang="ts">
   import dedent from 'dedent';
-  import { ruleset } from '$lib/helpers/a11y-manager.js';
+
   import A11yInspector from '$lib/components/a11y-inspector.svelte';
+  import A11yListView from '$lib/components/a11y-list-view.svelte';
   import BuildDate from '$lib/components/build-date.svelte';
   import Github from '$lib/components/github.svelte';
   import Headline from '$lib/components/headline.svelte';
@@ -18,7 +19,7 @@
 <Github/>
 
 <SplitPane
-    class="splitpane"
+    style="width: 100%; height: 100%;"
     initialPosition="50%"
 >
     <div slot="first">
@@ -128,17 +129,7 @@
 
         <hr />
 
-        {#each Object.keys(ruleset.groups) as group }
-            <section class="a11y-group">
-                <h2>{group}</h2>
-
-                {#each Object.keys(ruleset.groups[group]) as rule}
-                    <div class="a11y-rule">
-                        <StoredCheckbox id={rule} key={rule} label={ruleset.groups[group][rule].description} />
-                    </div>
-                {/each}
-            </section>
-        {/each}
+        <A11yListView />
     </div>
     <div slot="second">
         <A11yInspector></A11yInspector>
@@ -146,48 +137,9 @@
 </SplitPane>
 
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
-
-    :global(:root) {
-        ---ally-rule-lineheight: 32px;
-    }
-    :global(body) {
-        margin: 0;
-        width: 100vw;
-        height: 100vh;
-        font-family: 'Ubuntu';
-
-        & *:has(>.--a11yRuleLinked)::after {
-            content: ' ';
-            margin: 0 .5em;
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: var(---ally-rule-lineheight);
-            height: var(---ally-rule-lineheight);
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 5px;
-            background-color: hsl(0deg 0% 0% / .1);
-        }
-        & *:has(>.--a11yRuleLinked.--a11yFailed)::after {
-            content: '👎';
-            background-color: hsl(0deg 100% 50%);
-        }
-        & *:has(>.--a11yRuleLinked.--a11ySuccess)::after {
-            content: '👍';
-            background-color: hsl(120deg 100% 50%);
-        }
-    }
-
-    /**
-     * UI
+    /*
+     * Splitpane adjustments.
      */
-    .splitpane {
-        width: 100%;
-        height: 100%;
-    }
     div[slot=first],
     div[slot=second] {
         width: 100%;
@@ -202,26 +154,5 @@
         display: flex;
         justify-content: center;
         align-items: center;
-    }
-
-    /**
-     * Page content
-     */
-    .a11y-group {
-        box-sizing: border-box;
-        background-color: hsl(0deg 0% 0% / .05);
-        padding: .5em 1em;
-        border-radius: 5px;
-        margin-bottom: 1em;
-    }
-    .a11y-rule {
-        position: relative;
-        height: var(---ally-rule-lineheight);
-
-        & .checkbox {
-            height: var(---ally-rule-lineheight);
-            display: flex;
-            align-items: center;
-        }
     }
 </style>

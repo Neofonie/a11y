@@ -30,9 +30,44 @@
   font-family: var(--font-family-base);
 }
 
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
 a, button.link {
   color: var(--color-primary);
   text-decoration: underline;
   cursor: pointer;
 }
 
+/**
+ * A11y-rules.
+ *
+ * (Note that the related CSS-classes are set by JS from `a11y-manager.js` therefore the CSS
+ *   for it is defined globally in here)
+ **/
+*:has(>.--a11yRuleLinked)::after {
+  content: ' ';
+  margin: 0 .5em;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: var(--ally-rule-lineheight);
+  height: var(--ally-rule-lineheight);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  background-color: hsl(0deg 0% 0% / .1);
+}
+*:has(>.--a11yRuleLinked.--a11yFailed)::after {
+  content: '👎';
+  background-color: var(--color-primary);
+}
+*:has(>.--a11yRuleLinked.--a11ySuccess)::after {
+  content: '👍';
+  background-color: hsl(120deg 100% 50%);
+}

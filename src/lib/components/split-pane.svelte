@@ -29,7 +29,7 @@
     use:watchResize
     on:element:resize={onElementResize}
     class="--{orientation}"
-    style="---containerSize: {containerSize}; ---dividerPosition: {dividerPosition}; ---dividerSize: {dividerSize}; ---initialPosition: {normalizedInitialPosition}; ---minContentSize: {minContentSize}; ---leftMinContentSize: {leftMinContentSize}; ---rightMinContentSize: {rightMinContentSize}; ---dividerColor: {dividerColor}; ---dividerHighlightColor: {dividerHighlightColor}; ---dividerHandleColor: {dividerHandleColor}; {style}">
+    style="---containerSize: {containerSize}; ---dividerPosition: {dividerPosition}; ---dividerSize: {dividerSize}; ---initialPosition: {normalizedInitialPosition}; ---minContentSize: {minContentSize}; ---leftMinContentSize: {leftMinContentSize}; ---rightMinContentSize: {rightMinContentSize}; ---dividerColor: {dividerColor}; ---dividerHighlightColor: {dividerHighlightColor}; ---dividerHandleColor: {dividerHandleColor}; {style}{$$props.style}">
     <div class="first">
         <div class="dragHandle">
             <div class="dragSpacer"></div>

@@ -1,3 +1,50 @@
+<script>
+    import { watchResize } from '$lib/directives/watch-component-resizing';
+
+    export let orientation = 'horizontal',
+        /* The initial position for the slider. Ideally you should use a 'px' or '%' value. */
+        initialPosition = '200px',
+        /* Size for the divider. Note that, due to the pure CSS solution, the divider
+            should not be > 16px. Actually it can, but the handle will be only only
+            working in the center of the divider and won't react outside a range of 16px. */
+        dividerSize = '5px',
+        dividerPosition = undefined,
+        /* Color for the divider (default). */
+        dividerColor = 'hsl(0deg 0% 0% / .25)',
+        /* Color for the divider when highlighted/hovered. */
+        dividerHighlightColor = 'hsl(0deg 0% 0% / .5)',
+        dividerHandleColor = 'hsl(0deg 0% 0% / .5)',
+        /* The minimum size each size must have, going smaller won't work. If you want to move
+            the slider from position 0px to max-width then set '0' as value. */
+        minContentSize = '32px',
+        leftMinContentSize = minContentSize,
+        rightMinContentSize = minContentSize,
+        draggable = 'true',
+        style = undefined;
+
+    let cls = undefined,
+        isDraggable = false,
+        containerSize = 0,
+        normalizedInitialPosition = undefined;
+
+    export { cls as class };
+
+    $: if (draggable !== undefined) {
+        isDraggable = Boolean(draggable);
+    }
+    $: if (initialPosition) {
+        if (/%$/.test(initialPosition)) {
+            normalizedInitialPosition = `calc(${containerSize}px * ${parseFloat(initialPosition) / 100})`;
+        } else {
+            normalizedInitialPosition = initialPosition;
+        }
+    }
+
+    function onElementResize(e) {
+        containerSize = e?.detail?.size?.width;
+    }
+</script>
+
 <!--
     SplitPane
 
@@ -33,10 +80,7 @@
     <div class="first">
         <div class="dragHandle">
             <div class="dragSpacer"></div>
-            <div class="dragResize"
-                class:--draggable={isDraggable}
-                class:--fixPosition={dividerPosition !== undefined}
-            ></div>
+            <div class="dragResize" class:--draggable={isDraggable} class:--fixPosition={dividerPosition !== undefined}></div>
             <div class="leftContent"><slot name="first" /></div>
             <div class="dragHighlighter" class:--draggable={isDraggable}></div>
         </div>
@@ -46,59 +90,6 @@
         <div class="rightContent"><slot name="second" /></div>
     </div>
 </section>
-
-<script>
-	import { watchResize } from '$lib/directives/watch-component-resizing';
-
-
-    export let
-        orientation = 'horizontal',
-        /* The initial position for the slider. Ideally you should use a 'px' or '%' value. */
-        initialPosition = '200px',
-        /* Size for the divider. Note that, due to the pure CSS solution, the divider
-            should not be > 16px. Actually it can, but the handle will be only only
-            working in the center of the divider and won't react outside a range of 16px. */
-        dividerSize = '5px',
-        dividerPosition = undefined,
-        /* Color for the divider (default). */
-        dividerColor = 'hsl(0deg 0% 0% / .25)',
-        /* Color for the divider when highlighted/hovered. */
-        dividerHighlightColor = 'hsl(0deg 0% 0% / .5)',
-        dividerHandleColor = 'hsl(0deg 0% 0% / .5)',
-        /* The minimum size each size must have, going smaller won't work. If you want to move
-            the slider from position 0px to max-width then set '0' as value. */
-        minContentSize = '32px',
-        leftMinContentSize = minContentSize,
-        rightMinContentSize = minContentSize,
-        draggable = 'true',
-        style = undefined;
-
-    let
-        cls = undefined,
-        isDraggable = false,
-        containerSize = 0,
-        normalizedInitialPosition = undefined;
-
-    export { cls as class };
-
-
-    $:if (draggable !== undefined) {
-        isDraggable = Boolean(draggable);
-    }
-    $:if (initialPosition) {
-        if (/%$/.test(initialPosition)) {
-            normalizedInitialPosition = `calc(${containerSize}px * ${parseFloat(initialPosition) / 100})`;
-        } else {
-            normalizedInitialPosition = initialPosition;
-        }
-    }
-
-    function onElementResize (e) {
-        containerSize = e?.detail?.size?.width;
-    }
-</script>
-
-
 
 <style>
     section {
@@ -195,7 +186,12 @@
                 opacity: 0;
                 box-shadow: 0 0 0 0 hsl(0deg 0% 0% / 0);
                 border-radius: 0;
-                transition: box-shadow 250ms, border 250ms, width 250ms, height 250ms, border-radius 250ms;
+                transition:
+                    box-shadow 250ms,
+                    border 250ms,
+                    width 250ms,
+                    height 250ms,
+                    border-radius 250ms;
             }
             &.--draggable::after {
                 opacity: 1;
@@ -206,7 +202,7 @@
 
             &::after {
                 width: var(---knobSize);
-                box-shadow: 0 5px 10px 0 hsl(0deg 0% 0% / .25);
+                box-shadow: 0 5px 10px 0 hsl(0deg 0% 0% / 0.25);
                 border-radius: 50%;
             }
         }

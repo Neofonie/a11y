@@ -2,25 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @font-face {
-  font-family: 'Camingo';
-  src: url('../src/assets/fonts/CamingoWeb.woff2') format('woff2');
+  font-family: "Camingo";
+  src: url("../src/assets/fonts/CamingoWeb.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Oswald';
-  src: url('../src/assets/fonts/Oswald-Regular.woff2') format('woff2');
+  font-family: "Oswald";
+  src: url("../src/assets/fonts/Oswald-Regular.woff2") format("woff2");
   font-weight: bold;
   font-style: normal;
 }
 
-
 :root {
-  --font-family-base: 'Camingo', Arial, Helvetica, sans-serif;
-  --font-family-title: 'Oswald', Arial, Helvetica, sans-serif;
+  --font-family-base: "Camingo", Arial, Helvetica, sans-serif;
+  --font-family-title: "Oswald", Arial, Helvetica, sans-serif;
   --ally-rule-lineheight: 32px;
   --color-primary-hsl: 0deg 100% 47.5%;
   --color-primary: hsl(var(--color-primary-hsl));
@@ -36,7 +34,8 @@ body {
   height: 100vh;
 }
 
-a, button.link {
+a,
+button.link {
   color: var(--color-primary);
   text-decoration: underline;
   cursor: pointer;
@@ -48,9 +47,9 @@ a, button.link {
  * (Note that the related CSS-classes are set by JS from `a11y-manager.js` therefore the CSS
  *   for it is defined globally in here)
  **/
-*:has(>.--a11yRuleLinked)::after {
-  content: ' ';
-  margin: 0 .5em;
+*:has(> .--a11yRuleLinked)::after {
+  content: " ";
+  margin: 0 0.5em;
   position: absolute;
   top: 50%;
   right: 0;
@@ -61,13 +60,13 @@ a, button.link {
   justify-content: center;
   align-items: center;
   border-radius: 5px;
-  background-color: hsl(0deg 0% 0% / .1);
+  background-color: hsl(0deg 0% 0% / 0.1);
 }
-*:has(>.--a11yRuleLinked.--a11yFailed)::after {
-  content: '👎';
+*:has(> .--a11yRuleLinked.--a11yFailed)::after {
+  content: "👎";
   background-color: var(--color-primary);
 }
-*:has(>.--a11yRuleLinked.--a11ySuccess)::after {
-  content: '👍';
+*:has(> .--a11yRuleLinked.--a11ySuccess)::after {
+  content: "👍";
   background-color: hsl(120deg 100% 50%);
 }

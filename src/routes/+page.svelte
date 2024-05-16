@@ -10,6 +10,7 @@
   import ShowCode from '$lib/components/show-code.svelte';
   import SplitPane from '$lib/components/split-pane.svelte';
   import StoredCheckbox from '$lib/components/stored-checkbox.svelte';
+  import Tooltip from '$lib/components/tooltip.svelte';
 </script>
 
 <svelte:head>
@@ -25,7 +26,7 @@
     <div slot="first">
         <div class="container mx-auto px-4 py-4">
             <Headline tag="h1">
-                Test Accessibility „A11y“ (11 stehen für 11 Buchstaben, ergo eine Abkürzung)
+                Test Accessibility „A11y“ <Tooltip label="'11' steht für 11 Buchstaben, ergo für eine Abkürzung" />
             </Headline>
 
             <p>

@@ -2,10 +2,12 @@
     import { watchedA11yContent, testA11yRules } from '$lib/helpers/a11y-manager';
     import { onMount } from 'svelte';
 
-    export let src = 'https://google.com/';
+    let src = 'https://google.com/';
 
-    const // The URL for the proxy-server we're using to bypass CORS-issues.
-        proxyUrl = 'https://a11y.neofonie.de/cors/';
+    let // The URL for the proxy-server we're using to bypass CORS-issues.
+        proxy = 'http://localhost:8080/';
+    // http://localhost:8080/
+    // https://a11y.neofonie.de/cors/
 
     let elmIframe, inputDelay;
 
@@ -14,6 +16,13 @@
     //  so loading will happen after the user has stopped typing after
     //  a reasonable time (250ms).
     $: if (src) {
+        if (inputDelay) {
+            clearTimeout(inputDelay);
+        }
+        inputDelay = setTimeout(() => loadPagePerProxy(), 250);
+    }
+
+    $: if (proxy) {
         if (inputDelay) {
             clearTimeout(inputDelay);
         }
@@ -30,7 +39,7 @@
      */
     function loadPagePerProxy() {
         if (src && elmIframe) {
-            fetch(proxyUrl + src.replace('https://', ''))
+            fetch(proxy + src)
                 .then((response) => response.text())
                 .then((rawHTML) => {
                     elmIframe.src = `data:text/html;charset=utf-8,${escape(rawHTML)}`;
@@ -53,6 +62,7 @@
 
 <section>
     <div class="viewport">
+        <input class="address" type="text" bind:value={proxy} />
         <input class="address" type="text" bind:value={src} />
         <iframe bind:this={elmIframe} src="" title="a11y-inspector"></iframe>
     </div>

@@ -19,9 +19,14 @@
 :root {
   --font-family-base: "Camingo", Arial, Helvetica, sans-serif;
   --font-family-title: "Oswald", Arial, Helvetica, sans-serif;
-  --ally-rule-lineheight: 32px;
+  --lineheight-ally-rule: 32px;
   --color-primary-hsl: 0deg 100% 47.5%;
+  --color-background-hsl: 0deg 100% 100%;
   --color-primary: hsl(var(--color-primary-hsl));
+  --color-background: hsl(var(--color-background-hsl));
+  --color-negative: hsl(0deg 65% 50%);
+  --color-positive: hsl(120deg 65% 50%);
+  --shadow-default: 0 5px 10px -5px hsl(0deg 0% 0% / 0.25);
 }
 
 * {
@@ -41,6 +46,12 @@ button.link {
   cursor: pointer;
 }
 
+code {
+  background: var(--color-background);
+  padding: 2px 4px;
+  border-radius: 6px;
+}
+
 /**
  * A11y-rules.
  *
@@ -54,8 +65,8 @@ button.link {
   top: 50%;
   right: 0;
   transform: translateY(-50%);
-  width: var(--ally-rule-lineheight);
-  height: var(--ally-rule-lineheight);
+  width: var(--lineheight-ally-rule);
+  height: var(--lineheight-ally-rule);
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -64,9 +75,9 @@ button.link {
 }
 *:has(> .--a11yRuleLinked.--a11yFailed)::after {
   content: "👎";
-  background-color: var(--color-primary);
+  background-color: var(--color-negative);
 }
 *:has(> .--a11yRuleLinked.--a11ySuccess)::after {
   content: "👍";
-  background-color: hsl(120deg 100% 50%);
+  background-color: var(--color-positive);
 }

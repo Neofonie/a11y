@@ -24,7 +24,7 @@
         font: inherit;
         font-size: 1.25em;
         font-weight: bold;
-        background-color: white;
+        background-color: var(--color-background);
         border-radius: 50%;
         display: inline-flex;
         width: 16px;
@@ -57,7 +57,7 @@
             padding: .25em;
             border-radius: 5px;
             white-space: nowrap;
-            box-shadow: 0 5px 10px -5px hsl(0deg 0% 0% / .25);
+            box-shadow: var(--shadow-default);
         }
         &::after {
             content: '';

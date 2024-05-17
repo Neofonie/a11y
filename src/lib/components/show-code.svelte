@@ -7,6 +7,12 @@
         showCode: boolean = false;
 
     $: showPlayground = showCode;
+
+    function onGlobalClick(event) {
+        if (event?.target === elmDialog) {
+            elmDialog?.close();
+        }
+    }
 </script>
 
 <button class="link" on:click={_ => elmDialog?.showModal()}>{!showPlayground ? 'Show' : 'Hide'} Code</button>
@@ -19,6 +25,7 @@
     </playground-ide>
     <button />
 </dialog>
+<svelte:window on:click={onGlobalClick} />
 
 <style>
     playground-ide {

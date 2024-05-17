@@ -1,3 +1,8 @@
+import htmlLangSet from './a11y-rules/html-lang-set';
+import onlyOneH1 from './a11y-rules/only-one-h1';
+import imageHasAlt from './a11y-rules/image-has-alt';
+import inputLinkedToLabels from './a11y-rules/input-linked-to-labels';
+
 /**
  * Defines the ruleset. Each rule uses a key, which is related to the 'id'-attribute
  *  used in the a11y-page (like <input id="foo">  ==>  rule 'foo').
@@ -12,49 +17,16 @@ const a11yRuleset = {
   groups: {
     Allgemein: {},
     Markup: {
-      htmlLangSet: {
-        description: "`<html />` hat korrektes lang-attribut",
-        isActive: false,
-        test: (dom) =>
-          dom?.querySelector("html")?.getAttribute("lang") !== undefined,
-      },
+      htmlLangSet,
     },
     Content: {
-      onlyOneH1: {
-        description: "Es gibt nur eine `<h1 />` pro Seite",
-        isActive: false,
-        test: (dom) => Array.from(dom?.querySelectorAll("h1")).length <= 1,
-      },
+      onlyOneH1,
     },
     Bilder: {
-      imageHasAlt: {
-        description: "Alle `<img />-Elemente` haben ein Alt-Attribut",
-        isActive: false,
-        test: (dom) =>
-          Array.from(dom?.querySelectorAll("img")).filter(
-            (img) => img.getAttribute("alt") === undefined,
-          ).length === 0,
-      },
+      imageHasAlt,
     },
     Formulare: {
-      inputLinkedToLabels: {
-        description: "Alle Inputs sind mit entsprechenden Label verbunden",
-        isActive: false,
-        test: (dom) => {
-          const inputs = Array.from(dom?.querySelectorAll("input"));
-          const labels = Array.from(dom?.querySelectorAll("label"));
-          const nonLinkedInput = inputs.find((input) => {
-            const inputId = input.getAttribute("id");
-            const matchingLabel = labels.find(
-              (label) => label.getAttribute("for") === inputId,
-            );
-
-            return inputId === undefined || matchingLabel === undefined;
-          });
-
-          return nonLinkedInput === undefined;
-        },
-      },
+      inputLinkedToLabels,
     },
     Mobile: {},
     Tastatur: {},
@@ -84,6 +56,14 @@ Array.from(Object.keys(a11yRuleset.groups)).forEach(
  */
 export function testA11yRules() {
   if (a11yDomContext) {
+    const
+      mainStyle = 'font-weight: bold; font-size: 1.25em;',
+      ruleStyle = 'color: hsl(0deg 0% 50%);',
+      resultPositiveStyle = 'font-weight: bold; border-bottom: 2px solid hsl(120deg 100% 50%); font-style: italics;',
+      resultNegativeStyle = 'font-weight: bold; border-bottom: 2px solid hsl(0deg 100% 50%); font-style: italics;';
+
+    console.group(`%cRun all A11y-rules on content:`, mainStyle, a11yDomContext);
+
     Object.keys(flatA11yRuleset).forEach((ruleId) => {
       const rule = flatA11yRuleset[ruleId];
 
@@ -91,13 +71,18 @@ export function testA11yRules() {
       rule.linked?.classList.remove("--a11yFailed");
 
       if (rule?.isActive) {
+        console.group(`%cCheck A11y-rule '${ruleId}'...`, ruleStyle, rule);
         let ruleResult = rule.test(a11yDomContext);
+        console.debug(`%cResult = ${ruleResult}`, ruleResult ? resultPositiveStyle : resultNegativeStyle);
+        console.groupEnd();
 
         rule.linked?.classList.add(
           ruleResult ? "--a11ySuccess" : "--a11yFailed",
         );
       }
     });
+
+    console.groupEnd();
   }
 }
 
@@ -119,20 +104,20 @@ export function watchedA11yContent(dom) {
  * @returns object
  */
 export function linkA11yRule(node) {
-  if (node && node.id && flatA11yRuleset[node.id]) {
+  if (node && node.dataset?.rule && flatA11yRuleset[node.dataset.rule]) {
     // Due to the reactivity of svelte a simple 'change'-listener
     //  doesn't help here, unfortunately 'MutationObserver' won't
     //  work either (at least in the developemt enviroment as we
     //  run a NodeJS), so the simpliest solution for now is a
     //  setInterval (w/o extra dependencies).
     setInterval(() => {
-      if (node.checked !== flatA11yRuleset[node.id].isActive) {
-        flatA11yRuleset[node.id].isActive = node.checked;
+      if (node.checked !== flatA11yRuleset[node.dataset.rule].isActive) {
+        flatA11yRuleset[node.dataset.rule].isActive = node.checked;
         testA11yRules();
       }
     }, 100);
-    flatA11yRuleset[node.id].linked = node;
-    flatA11yRuleset[node.id].isActive = node.checked;
+    flatA11yRuleset[node.dataset.rule].linked = node;
+    flatA11yRuleset[node.dataset.rule].isActive = node.checked;
     node.classList.add("--a11yRuleLinked");
   }
   return {

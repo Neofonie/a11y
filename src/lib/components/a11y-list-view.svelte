@@ -25,7 +25,7 @@
 
 <style>
     section {
-        ---ally-rule-lineheight: 2.5em;
+        ---lineheight-ally-rule: 2.5em;
         box-sizing: border-box;
         background-color: hsl(0deg 0% 0% / .05);
         border-radius: 5px;
@@ -86,7 +86,7 @@
 
             & > * {
                 position: relative;
-                height: var(---ally-rule-lineheight);
+                height: var(---lineheight-ally-rule);
             }
         }
         &:has(h2 > input[type=checkbox]:checked) {

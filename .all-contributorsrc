@@ -9,6 +9,8 @@
   "imageSize": 100,
   "commit": true,
   "commitConvention": "none",
+  "contributorsPerLine": 4,
+  "linkToUsage": false,
   "contributors": [
     {
       "login": "dutscher",
@@ -16,7 +18,8 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/14682?v=4",
       "profile": "https://github.com/dutscher",
       "contributions": [
-        "code"
+        "code",
+        "a11y"
       ]
     },
     {
@@ -25,7 +28,8 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/16097317?v=4",
       "profile": "https://github.com/KaiPUecker",
       "contributions": [
-        "code"
+        "code",
+        "plugin"
       ]
     },
     {
@@ -34,7 +38,8 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/132995915?v=4",
       "profile": "https://github.com/dastan-neofonie",
       "contributions": [
-        "code"
+        "code",
+        "plugin"
       ]
     },
     {
@@ -61,7 +66,8 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/48299833?v=4",
       "profile": "https://github.com/wolffste",
       "contributions": [
-        "code"
+        "code",
+        "design"
       ]
     },
     {
@@ -70,7 +76,8 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/121291022?v=4",
       "profile": "https://github.com/vincentkg",
       "contributions": [
-        "code"
+        "code",
+        "design"
       ]
     },
     {
@@ -88,7 +95,8 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/15165864?v=4",
       "profile": "https://github.com/djpo",
       "contributions": [
-        "code"
+        "code",
+        "design"
       ]
     },
     {
@@ -100,7 +108,5 @@
         "code"
       ]
     }
-  ],
-  "contributorsPerLine": 4,
-  "linkToUsage": true
+  ]
 }

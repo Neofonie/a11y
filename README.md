@@ -1,6 +1,6 @@
 # create-svelte
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-9-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-10-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 <a href='#contributors-'><img src='https://img.shields.io/badge/contributors-10-default.svg?logo=github&color=6c64e4' alt='Contributors'/></a>
@@ -65,6 +65,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     </tr>
     <tr>
       <td align="center" valign="top" width="25%"><a href="https://github.com/djpo"><img src="https://avatars.githubusercontent.com/u/15165864?v=4?s=100" width="100px;" alt="Poppe"/><br /><sub><b>Poppe</b></sub></a><br /><a href="https://github.com/Neofonie/a11y/commits?author=djpo" title="Code">💻</a></td>
+      <td align="center" valign="top" width="25%"><a href="https://github.com/Fernandadp"><img src="https://avatars.githubusercontent.com/u/37628126?v=4?s=100" width="100px;" alt="Fernanda Dehays"/><br /><sub><b>Fernanda Dehays</b></sub></a><br /><a href="https://github.com/Neofonie/a11y/commits?author=Fernandadp" title="Code">💻</a></td>
     </tr>
   </tbody>
   <tfoot>

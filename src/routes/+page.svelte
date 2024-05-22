@@ -55,7 +55,5 @@
         <div class="flex-grow">
             <A11yInspector />
         </div>
-        <div class="flex-grow-0 text-right">
-        </div>
     </div>
 </SplitPane>

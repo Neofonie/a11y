@@ -1,6 +1,6 @@
 # create-svelte
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-7-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 <a href='#contributors-'><img src='https://img.shields.io/badge/contributors-10-default.svg?logo=github&color=6c64e4' alt='Contributors'/></a>
@@ -61,6 +61,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="25%"><a href="https://github.com/GuelcanKorkut"><img src="https://avatars.githubusercontent.com/u/22833869?v=4?s=100" width="100px;" alt="Gülcan Korkut"/><br /><sub><b>Gülcan Korkut</b></sub></a><br /><a href="https://github.com/Neofonie/a11y/commits?author=GuelcanKorkut" title="Code">💻</a></td>
       <td align="center" valign="top" width="25%"><a href="https://github.com/wolffste"><img src="https://avatars.githubusercontent.com/u/48299833?v=4?s=100" width="100px;" alt="Stefan Wolff"/><br /><sub><b>Stefan Wolff</b></sub></a><br /><a href="https://github.com/Neofonie/a11y/commits?author=wolffste" title="Code">💻</a></td>
       <td align="center" valign="top" width="25%"><a href="https://github.com/vincentkg"><img src="https://avatars.githubusercontent.com/u/121291022?v=4?s=100" width="100px;" alt="vincentkg"/><br /><sub><b>vincentkg</b></sub></a><br /><a href="https://github.com/Neofonie/a11y/commits?author=vincentkg" title="Code">💻</a></td>
+      <td align="center" valign="top" width="25%"><a href="https://github.com/karakozA"><img src="https://avatars.githubusercontent.com/u/168534924?v=4?s=100" width="100px;" alt="karakozA"/><br /><sub><b>karakozA</b></sub></a><br /><a href="https://github.com/Neofonie/a11y/commits?author=karakozA" title="Code">💻</a></td>
     </tr>
   </tbody>
   <tfoot>

@@ -1,0 +1,43 @@
+{
+  "projectName": "a11y",
+  "projectOwner": "Neofonie",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "commitConvention": "none",
+  "contributors": [
+    {
+      "login": "dutscher",
+      "name": "Willy Woitas",
+      "avatar_url": "https://avatars.githubusercontent.com/u/14682?v=4",
+      "profile": "http://www.willy-woitas.de",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "KaiPUecker",
+      "name": "Kai Uecker",
+      "avatar_url": "https://avatars.githubusercontent.com/u/14682?v=4",
+      "profile": "https://github.com/KaiPUecker",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "dastan-neofonie",
+      "name": "Dastan Kasmamytov",
+      "avatar_url": "https://avatars.githubusercontent.com/u/132995915?v=4",
+      "profile": "https://github.com/dastan-neofonie",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "linkToUsage": false
+}

@@ -39,6 +39,3 @@
     </select>
   </div>
 </div>
-
-<style>
-</style>

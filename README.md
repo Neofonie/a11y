@@ -1,6 +1,6 @@
 # create-svelte
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 <a href='#contributors-'><img src='https://img.shields.io/badge/contributors-10-default.svg?logo=github&color=6c64e4' alt='Contributors'/></a>
@@ -52,14 +52,15 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tbody>
     <tr>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/dutscher"><img src="https://avatars.githubusercontent.com/u/14682?v=4?s=100" width="100px;" alt="Willy Woitas"/><br /><sub><b>Willy Woitas</b></sub></a><br /><a href="https://github.com/Neofonie/a11y/commits?author=dutscher" title="Code">💻</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/KaiPUecker"><img src="https://avatars.githubusercontent.com/u/16097317?v=4?s=100" width="100px;" alt="KaiPUecker"/><br /><sub><b>KaiPUecker</b></sub></a><br /><a href="https://github.com/Neofonie/a11y/commits?author=KaiPUecker" title="Code">💻</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/dastan-neofonie"><img src="https://avatars.githubusercontent.com/u/132995915?v=4?s=100" width="100px;" alt="dastan-neofonie"/><br /><sub><b>dastan-neofonie</b></sub></a><br /><a href="https://github.com/Neofonie/a11y/commits?author=dastan-neofonie" title="Code">💻</a></td>
+      <td align="center" valign="top" width="25%"><a href="https://github.com/dutscher"><img src="https://avatars.githubusercontent.com/u/14682?v=4?s=100" width="100px;" alt="Willy Woitas"/><br /><sub><b>Willy Woitas</b></sub></a><br /><a href="https://github.com/Neofonie/a11y/commits?author=dutscher" title="Code">💻</a></td>
+      <td align="center" valign="top" width="25%"><a href="https://github.com/KaiPUecker"><img src="https://avatars.githubusercontent.com/u/16097317?v=4?s=100" width="100px;" alt="KaiPUecker"/><br /><sub><b>KaiPUecker</b></sub></a><br /><a href="https://github.com/Neofonie/a11y/commits?author=KaiPUecker" title="Code">💻</a></td>
+      <td align="center" valign="top" width="25%"><a href="https://github.com/dastan-neofonie"><img src="https://avatars.githubusercontent.com/u/132995915?v=4?s=100" width="100px;" alt="dastan-neofonie"/><br /><sub><b>dastan-neofonie</b></sub></a><br /><a href="https://github.com/Neofonie/a11y/commits?author=dastan-neofonie" title="Code">💻</a></td>
+      <td align="center" valign="top" width="25%"><a href="https://github.com/dagmarcliment"><img src="https://avatars.githubusercontent.com/u/166798148?v=4?s=100" width="100px;" alt="dagmarcliment"/><br /><sub><b>dagmarcliment</b></sub></a><br /><a href="https://github.com/Neofonie/a11y/commits?author=dagmarcliment" title="Code">💻</a></td>
     </tr>
   </tbody>
   <tfoot>
     <tr>
-      <td align="center" size="13px" colspan="7">
+      <td align="center" size="13px" colspan="4">
         <img src="https://raw.githubusercontent.com/all-contributors/all-contributors-cli/1b8533af435da9854653492b1327a23a4dbd0a10/assets/logo-small.svg">
           <a href="https://all-contributors.js.org/docs/en/bot/usage">Add your contributions</a>
         </img>

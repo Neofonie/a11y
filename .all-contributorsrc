@@ -81,6 +81,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "djpo",
+      "name": "Poppe",
+      "avatar_url": "https://avatars.githubusercontent.com/u/15165864?v=4",
+      "profile": "https://github.com/djpo",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 4,

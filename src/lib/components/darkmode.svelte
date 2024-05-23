@@ -63,7 +63,17 @@
     handleSVGMotion()
   }
 
-  // automatically set the theme based on the user's preference
+  /*
+    in app.html
+    there is the first byte script to fill the gap between loading and onMount
+    <script>
+      (() => {
+          if (localStorage.getItem('theme') === 'dark' || window.matchMedia('(prefers-color-scheme: dark)').matches) {
+              document.documentElement.setAttribute('data-theme', 'dark');
+          }
+      })();< /script>
+   */
+
   onMount(() => {
     const storedTheme = localStorage.getItem('theme') as Themes;
     if (storedTheme) {

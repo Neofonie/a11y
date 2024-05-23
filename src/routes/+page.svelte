@@ -15,23 +15,21 @@
     import Keyboard from '$lib/content/keyboard.svelte';
     import A11yListView from '$lib/components/a11y-list-view.svelte';
     import A11yInspector from '$lib/components/a11y-inspector.svelte';
+    import ThemeSwitcher from '$lib/components/themeswitcher.svelte';
 </script>
 
-<Github/>
+<Github />
 
-<SplitPane
-    class="w-full h-full"
-    initialPosition="60%"
->
-    <div slot="first" class="w-full h-full box-border overflow-y-auto p-1">
-        <div class="container mx-auto px-4 py-4">
+<SplitPane class="h-full w-full" initialPosition="60%">
+    <div slot="first" class="box-border h-full w-full overflow-y-auto p-1">
+        <div class="container relative mx-auto px-4 py-4">
             <Headline tag="h1">
                 Neofonie Accessibility „A11y“ Tool <Tooltip label="'11' steht für 11 Buchstaben, ergo für eine Abkürzung" />
             </Headline>
 
             <p>
-                Diese Checkliste wird von unseren Entwicklern genutzt, um eine gewisse Barriere-Freiheit für unsere Endkunden zu gewährleisten.
-                Jede Komponente/Seite sollte gegen diese Checkliste geprüft werden.
+                Diese Checkliste wird von unseren Entwicklern genutzt, um eine gewisse Barriere-Freiheit für unsere Endkunden zu gewährleisten. Jede Komponente/Seite sollte gegen diese Checkliste
+                geprüft werden.
             </p>
 
             <BuildDate />
@@ -45,13 +43,17 @@
             <Forms />
             <Mobile />
             <Keyboard />
+
+            <ThemeSwitcher class="absolute top-[1em] right-[1em]" />
         </div>
 
         <hr />
 
         <A11yListView />
     </div>
-    <div slot="second" class="w-full h-full flex justify-center items-center">
-        <A11yInspector />
+    <div slot="second" class="flex flex-col h-full w-full items-stretch justify-center">
+        <div class="flex-grow">
+            <A11yInspector />
+        </div>
     </div>
 </SplitPane>

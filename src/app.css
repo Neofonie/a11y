@@ -22,8 +22,8 @@
   --lineheight-ally-rule: 32px;
   --color-primary-hsl: 0deg 100% 47.5%;
   --color-background-hsl: 0deg 100% 100%;
-  --color-primary: hsl(var(--color-primary-hsl));
-  --color-background: hsl(var(--color-background-hsl));
+  --color-primary: oklch(var(--p1));
+  --color-background: oklch(var(--b1));
   --color-negative: hsl(0deg 65% 50%);
   --color-positive: hsl(120deg 65% 50%);
   --shadow-default: 0 5px 10px -5px hsl(0deg 0% 0% / 0.25);

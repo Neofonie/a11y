@@ -52,15 +52,6 @@
       ]
     },
     {
-      "login": "GuelcanKorkut",
-      "name": "Gülcan Korkut",
-      "avatar_url": "https://avatars.githubusercontent.com/u/22833869?v=4",
-      "profile": "https://github.com/GuelcanKorkut",
-      "contributions": [
-        "code"
-      ]
-    },
-    {
       "login": "wolffste",
       "name": "Stefan Wolff",
       "avatar_url": "https://avatars.githubusercontent.com/u/48299833?v=4",
@@ -104,6 +95,15 @@
       "name": "Fernanda Dehays",
       "avatar_url": "https://avatars.githubusercontent.com/u/37628126?v=4",
       "profile": "https://github.com/Fernandadp",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "GuelcanKorkut",
+      "name": "Gülcan Korkut",
+      "avatar_url": "https://avatars.githubusercontent.com/u/22833869?v=4",
+      "profile": "https://github.com/GuelcanKorkut",
       "contributions": [
         "code"
       ]

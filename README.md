@@ -52,14 +52,14 @@ Thanks goes to these wonderful developers ([emoji key](https://allcontributors.o
       <td align="center" valign="top" width="25%"><a href="https://github.com/dagmarcliment"><img src="https://avatars.githubusercontent.com/u/166798148?v=4?s=100" width="100px;" alt="dagmarcliment"/><br /><sub><b>dagmarcliment</b></sub></a><br /><a href="https://github.com/Neofonie/a11y/commits?author=dagmarcliment" title="Code">💻</a></td>
     </tr>
     <tr>
-      <td align="center" valign="top" width="25%"><a href="https://github.com/GuelcanKorkut"><img src="https://avatars.githubusercontent.com/u/22833869?v=4?s=100" width="100px;" alt="Gülcan Korkut"/><br /><sub><b>Gülcan Korkut</b></sub></a><br /><a href="https://github.com/Neofonie/a11y/commits?author=GuelcanKorkut" title="Code">💻</a></td>
       <td align="center" valign="top" width="25%"><a href="https://github.com/wolffste"><img src="https://avatars.githubusercontent.com/u/48299833?v=4?s=100" width="100px;" alt="Stefan Wolff"/><br /><sub><b>Stefan Wolff</b></sub></a><br /><a href="https://github.com/Neofonie/a11y/commits?author=wolffste" title="Code">💻</a> <a href="#design-wolffste" title="Design">🎨</a></td>
       <td align="center" valign="top" width="25%"><a href="https://github.com/vincentkg"><img src="https://avatars.githubusercontent.com/u/121291022?v=4?s=100" width="100px;" alt="vincentkg"/><br /><sub><b>vincentkg</b></sub></a><br /><a href="https://github.com/Neofonie/a11y/commits?author=vincentkg" title="Code">💻</a> <a href="#design-vincentkg" title="Design">🎨</a></td>
       <td align="center" valign="top" width="25%"><a href="https://github.com/karakozA"><img src="https://avatars.githubusercontent.com/u/168534924?v=4?s=100" width="100px;" alt="karakozA"/><br /><sub><b>karakozA</b></sub></a><br /><a href="https://github.com/Neofonie/a11y/commits?author=karakozA" title="Code">💻</a></td>
+      <td align="center" valign="top" width="25%"><a href="https://github.com/djpo"><img src="https://avatars.githubusercontent.com/u/15165864?v=4?s=100" width="100px;" alt="Poppe"/><br /><sub><b>Poppe</b></sub></a><br /><a href="https://github.com/Neofonie/a11y/commits?author=djpo" title="Code">💻</a> <a href="#design-djpo" title="Design">🎨</a></td>
     </tr>
     <tr>
-      <td align="center" valign="top" width="25%"><a href="https://github.com/djpo"><img src="https://avatars.githubusercontent.com/u/15165864?v=4?s=100" width="100px;" alt="Poppe"/><br /><sub><b>Poppe</b></sub></a><br /><a href="https://github.com/Neofonie/a11y/commits?author=djpo" title="Code">💻</a> <a href="#design-djpo" title="Design">🎨</a></td>
       <td align="center" valign="top" width="25%"><a href="https://github.com/Fernandadp"><img src="https://avatars.githubusercontent.com/u/37628126?v=4?s=100" width="100px;" alt="Fernanda Dehays"/><br /><sub><b>Fernanda Dehays</b></sub></a><br /><a href="https://github.com/Neofonie/a11y/commits?author=Fernandadp" title="Code">💻</a></td>
+      <td align="center" valign="top" width="25%"><a href="https://github.com/GuelcanKorkut"><img src="https://avatars.githubusercontent.com/u/22833869?v=4?s=100" width="100px;" alt="Gülcan Korkut"/><br /><sub><b>Gülcan Korkut</b></sub></a><br /><a href="https://github.com/Neofonie/a11y/commits?author=GuelcanKorkut" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>

@@ -13,7 +13,9 @@
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "format": "prettier --write .",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "all-contributors:add": "all-contributors add",
+    "all-contributors:generate": "all-contributors generate"
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "^3.0.0",
@@ -23,7 +25,9 @@
     "@types/node": "^20.11.19",
     "@types/ssh2-sftp-client": "^9.0.3",
     "@types/yargs": "^17.0.32",
+    "all-contributors-cli": "^6.26.1",
     "autoprefixer": "^10.4.19",
+    "dedent": "^1.5.3",
     "husky": "^8.0.0",
     "npm-run-all": "^4.1.5",
     "daisyui": "^4.10.3",
@@ -39,8 +43,7 @@
     "tslib": "^2.4.1",
     "typescript": "^5.0.0",
     "vite": "^5.0.3",
-    "yargs": "^17.7.2",
-    "dedent": "^1.5.3"
+    "yargs": "^17.7.2"
   },
   "dependencies": {
     "material": "^0.9.10",

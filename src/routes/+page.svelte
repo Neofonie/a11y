@@ -15,7 +15,7 @@
     import Keyboard from '$lib/content/keyboard.svelte';
     import A11yListView from '$lib/components/a11y-list-view.svelte';
     import A11yInspector from '$lib/components/a11y-inspector.svelte';
-    import ThemeSwitcher from '$lib/components/themeswitcher.svelte';
+    import Darkmode from '$lib/components/darkmode.svelte';
 </script>
 
 <Github />
@@ -44,7 +44,7 @@
             <Mobile />
             <Keyboard />
 
-            <ThemeSwitcher class="absolute top-[1em] right-[1em]" />
+            <Darkmode class="absolute top-10 right-10" />
         </div>
 
         <hr />

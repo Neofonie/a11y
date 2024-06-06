@@ -1,7 +1,8 @@
 {
-  "name": "cors-proxy-server",
+  "name": "a11y-proxy",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start:local": "node index.js",
     "start": "pm2 start index.js",
@@ -9,10 +10,12 @@
     "monitor": "pm2 monitor",
     "stop": "pm2 stop 0"
   },
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "cors-anywhere": "^0.4.4",
+  "login-pms": "https://id.keymetrics.io/api/oauth/login",
+  "author": "Willy Woitas",
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer-core": "^22.10.0",
+    "express": "^4.19.2",
     "pm2": "^5.3.1"
   }
 }

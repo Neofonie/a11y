@@ -2,12 +2,11 @@
     import { watchedA11yContent, testA11yRules } from '$lib/helpers/a11y-manager';
     import { onMount } from 'svelte';
 
-    let
-        elmIframe,
+    let elmIframe,
         // The URL to test (initial value).
         src = 'https://google.com/',
         // The URL for the proxy-server we're using to bypass CORS-issues.
-        proxy = 'http://localhost:8080/',
+        proxy = 'https://a11y.neofonie.de/cors?url=',
         inputDelay;
 
     // As soon 'src' or 'proxy' changes (like when editing text in any input)
@@ -53,7 +52,6 @@
 </script>
 
 <section>
-    <label title="Proxy URL (must end with '/'!)"><input type="text" bind:value={proxy} /></label>
     <label title="URL to test"><input type="text" bind:value={src} /></label>
     <iframe bind:this={elmIframe} src="" title="a11y-inspector"></iframe>
 </section>
@@ -72,7 +70,7 @@
 
         & > label {
             width: 100%;
-            position: relative;;
+            position: relative;
 
             & > input {
                 width: 100%;
@@ -89,9 +87,9 @@
             &::after {
                 content: attr(title);
                 position: absolute;
-                top: .25em;
+                top: 0.25em;
                 left: 1em;
-                font-size: .75em;
+                font-size: 0.75em;
                 font-family: var(--font-family-title);
                 color: var(--color-primary);
                 pointer-events: none;

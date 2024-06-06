@@ -24,7 +24,14 @@ sftp
     passphrase: secrets.passphrase,
     privateKey: Buffer.from(secrets.privateKey.replace(/\|/g, "\n"), "utf-8"),
   })
-  .then(() => sftp.uploadDir(src, secrets.destination))
+  .then(() => {
+    // cleanup svelte dir
+    return sftp.rmdir(secrets.destination + "/_app", true);
+  })
+  .then(() => {
+    // upload new vite
+    return sftp.uploadDir(src, secrets.destination);
+  })
   .then((msg: string) => {
     console.log("Upload done", msg);
     return sftp.end();

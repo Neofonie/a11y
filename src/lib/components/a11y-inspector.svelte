@@ -31,13 +31,13 @@
     function loadPagePerProxy() {
         if (src && elmIframe) {
             fetch(proxy + src)
-                .then((response) => response.text())
-                .then((rawHTML) => {
-                    elmIframe.src = `data:text/html;charset=utf-8,${escape(rawHTML)}`;
+                .then((response) => response.json())
+                .then((json) => {
+                    elmIframe.src = `data:text/html;charset=utf-8,${escape(json.html)}`;
 
                     if (DOMParser) {
                         const parser = new DOMParser(),
-                            doc = parser.parseFromString(rawHTML, 'text/html');
+                            doc = parser.parseFromString(json.html, 'text/html');
 
                         watchedA11yContent(doc);
                         testA11yRules();

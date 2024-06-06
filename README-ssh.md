@@ -11,3 +11,11 @@ netstat -tulpn
 # wenn du ihn wieder deaktiviert moechtest dann:
 
 systemctl disable nginx.service
+
+## Validieren config
+nginx -t
+
+## Restart
+systemctl restart nginx
+systemctl reload nginx
+

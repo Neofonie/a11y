@@ -1,13 +1,15 @@
-<script>
+<script lang="ts">
     import { watchedA11yContent, testA11yRules } from '$lib/helpers/a11y-manager';
     import { onMount } from 'svelte';
+    import Ripple from '$lib/components/ripple.svelte';
 
-    let elmIframe,
-        // The URL to test (initial value).
+    let elmIframe: any,
+        isLoading = false,
+        // The URL to test (initial value).let
         src = 'https://google.com/',
         // The URL for the proxy-server we're using to bypass CORS-issues.
         proxy = 'https://a11y.neofonie.de/cors?url=',
-        inputDelay;
+        inputDelay: any;
 
     // As soon 'src' or 'proxy' changes (like when editing text in any input)
     //  this will be triggered. We use `setTimeout` to delay the input
@@ -17,7 +19,7 @@
         if (inputDelay) {
             clearTimeout(inputDelay);
         }
-        inputDelay = setTimeout(() => loadPagePerProxy(), 250);
+        inputDelay = setTimeout(() => loadPagePerProxy(), 500);
     }
 
     /**
@@ -30,6 +32,7 @@
      */
     function loadPagePerProxy() {
         if (src && elmIframe) {
+            isLoading = true;
             fetch(proxy + src)
                 .then((response) => response.json())
                 .then((json) => {
@@ -41,6 +44,8 @@
 
                         watchedA11yContent(doc);
                         testA11yRules();
+
+                        isLoading = false;
                     }
                 });
         }
@@ -51,16 +56,17 @@
     onMount(loadPagePerProxy);
 </script>
 
-<section>
+<section class="h-full w-full">
     <label title="URL to test"><input type="text" bind:value={src} /></label>
-    <iframe bind:this={elmIframe} src="" title="a11y-inspector"></iframe>
+    <div class="relative h-full w-full">
+        <Ripple class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform" show={isLoading} />
+        <iframe bind:this={elmIframe} src="" title="a11y-inspector" class="h-full w-full"></iframe>
+    </div>
 </section>
 
 <style>
     section {
         ---border-radius: 5px;
-        width: 100%;
-        height: 100%;
         box-sizing: border-box;
         padding: 1em;
         position: relative;
@@ -97,8 +103,6 @@
         }
     }
     iframe {
-        width: 100%;
-        height: 100%;
         border: 1px dashed hsl(0deg 0% 0% / 0.1);
         border-radius: var(---border-radius);
         box-shadow: inset 0 0 10px hsl(0deg 0% 0% / 0.2);

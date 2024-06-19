@@ -21,3 +21,6 @@ import StoredCheckbox from "$lib/components/stored-checkbox.svelte";
         <img src="assets/chrome-devtools.png" alt="Dev Console im Chrome" class="w-20" />
     </Link>
 </StoredCheckbox>
+<StoredCheckbox key="capo" label="Capo Chrome Extension (CleanUp Your <Head>)">
+    <Link href="https://rviscomi.github.io/capo.js/user/extension/">Link</Link>
+</StoredCheckbox>

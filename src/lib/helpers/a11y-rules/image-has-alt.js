@@ -3,7 +3,7 @@ export default {
     isActive: false,
     test: (dom) => {
       let nodes = Array.from(dom?.querySelectorAll("img"));
-      let nodesWithoutAlt = nodes.filter((img) => img.getAttribute("alt") === (undefined || ''));
+      let nodesWithoutAlt = nodes.filter((img) => img.getAttribute("alt") === (undefined || null || ''));
 
       console.debug('nodes:', nodes);
       console.debug('nodesWithoutAlt:', nodesWithoutAlt);
